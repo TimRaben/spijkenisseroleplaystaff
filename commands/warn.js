@@ -6,6 +6,8 @@ module.exports.run = async (client, message, args) => {
 
     // !warn spelerNaam redenen hier.
 
+    message.delete();
+
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("sorry jij kan dit niet");
 
     if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
