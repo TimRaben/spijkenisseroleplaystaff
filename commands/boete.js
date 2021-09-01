@@ -4,8 +4,6 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
-    if (!message.member.hasPermission("USE_APPLICATION_COMMANDS")) return message.reply("Jij bent GEEN Politie en hebt dus niet de juiste machtigingen om boetes uit te schrijven!");
-
     if (!args[0]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
 
     if (!args[1]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
