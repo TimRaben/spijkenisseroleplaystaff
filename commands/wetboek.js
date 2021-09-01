@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
             .setColor("#ff4400")
             .setThumbnail('https://images-ext-1.discordapp.net/external/L07ODu0HdOMNLwViR1qpWq0US6vL2yWJAnwuehx1_Ts/https/images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%253Fsize%253D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png')
             .setTimestamp()
-            .setFooter('Spijkenisse Roleplay - Wetboek • Goedgekeurd door het Raadsteam van SPN-RP', 'https://images-ext-1.discordapp.net/external/L07ODu0HdOMNLwViR1qpWq0US6vL2yWJAnwuehx1_Ts/https/images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%253Fsize%253D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png');
+            .setFooter('Officiële Wetboek • Goedgekeurd door het Raadsteam van SPN-RP', 'https://images-ext-1.discordapp.net/external/L07ODu0HdOMNLwViR1qpWq0US6vL2yWJAnwuehx1_Ts/https/images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%253Fsize%253D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png');
 
         return message.channel.send(wetboekEmbed);
 
