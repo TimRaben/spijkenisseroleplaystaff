@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
-        var channel = message.member.guild.channels.cache.get("866337102185365504");
+        var channel = message.member.guild.channels.cache.get("866379875904520202");
  
         if (!channel) return;
 
