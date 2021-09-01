@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
         .setFooter(`Spijkenisse Roleplay • Giveaway Systeem`)
         .setTimestamp()
         .setColor("ORANGE")
-        .setDescription(`Jaja! We hebben weer een leuke giveaway namelijk ${args.slice(2).join(" ")} vind hier onder extra informatie!\n\n__**Informatie:**__\n**Prijs:** ${args.slice(1).join(" ")}\n**Aantal Winnaars:** ${winnerCount} Winnaar(s)\n**Host:** ${member.author}\n**Eindigt op:** ${dateEnd}`);
+        .setDescription(`Jaja! We hebben weer een leuke giveaway namelijk ${args.slice(2).join(" ")} vind hier onder extra informatie!\n\n__**Informatie:**__\n**Prijs:** ${args.slice(1).join(" ")}\n**Aantal Winnaars:** ${winnerCount} Winnaar(s)\n**Host:** ${message.author}\n**Eindigt op:** ${dateEnd}`);
 
     var embedSend = await message.channel.send(giveawayEmbed);
     embedSend.react("🎉");
