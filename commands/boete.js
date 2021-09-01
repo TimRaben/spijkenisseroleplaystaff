@@ -10,6 +10,12 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
 
+    if (!args[2]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
+
+    if (!args[3]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
+
+    if (!args[4]) return message.reply("Gebruik: ``spn/boete (Persoon) (Boete in getallen bijvoorbeeld 650, daarmee bedoel je 650 euro!) (Celstraf in Maanden) (Verwaardelijke Celstraf) (Strafbaar(e) feiten)");
+
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
 
 
