@@ -18,9 +18,9 @@ module.exports.run = async (client, message, args) => {
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
-        message.member.guild.channels.cache.get("866337040759783454");
-
-    channel.send(embed);
+        var channel = message.member.guild.channels.cache.get("866337040759783454");
+ 
+        if (!channel) return;
 
     var msg = await message.channel.send(embed)
 
