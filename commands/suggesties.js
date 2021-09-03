@@ -13,23 +13,23 @@ module.exports.run = async (client, message, args) => {
     var embed = new discord.MessageEmbed()
             .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true})}`)
             .setTitle("Spijkenisse Roleplay - Suggesties")
-            .setDescription(`**Suggestie:**\n ${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie achter met ``spn/suggestie (suggestie)``*`)
+            .setDescription(`**Suggestie:**\n${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*``Laat jou suggestie achter met ``spn/suggestie (suggestie)``*`)
             .setColor("RANDOM")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
-            var channel = message.member.guild.channels.cache.get("866337040759783454");
- 
-            if (!channel) return;
-    
-        channel.send(embed);
-    
-        var msg = await message.channel.send(embed)
-    
-        await msg.react('✅');
-        await msg.react('❌');
-    
-    }
+        var channel = message.member.guild.channels.cache.get("866337040759783454");
+
+    channel.send(embed);
+
+    if (!channel) return;
+
+    var msg = await channel(embed)
+
+    await msg.react('✅');
+    await msg.react('❌');
+
+}
 
 
 module.exports.help = {
