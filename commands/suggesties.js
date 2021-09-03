@@ -4,17 +4,15 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **-** Sorry, jij kan geen Roleplay Hosten!");
-
     if (!args[0]) return message.reply(":x: **-** Geef een suggestie op!");
 
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
 
     var embed = new discord.MessageEmbed()
-            .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
-            .setTitle("Spijkenisse Roleplay - Suggesties")
-            .setDescription(`**Suggestie:**\n ${args.join(" ")}\n**Ingezonden door:**\n${message.member}\n\n**Laat jou suggestie achter met spn/suggestie (suggestie)**`)
-            .setColor("AQUA")
+            .setThumbnail(message.user.displayAvatarURL({ dynamic: true}))
+            .setTitle("Spijkenisse Roleplay - Suggestie")
+            .setDescription(`**Suggestie:**\n${args.join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
+            .setColor("RANDOM")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
@@ -24,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 
     channel.send(embed);
 
-    var msg = await message.member.guild.channels.chache.get("866337040759783454");
+    var msg = await message.channel.send(embed)
 
     await msg.react('✅');
     await msg.react('❌');
