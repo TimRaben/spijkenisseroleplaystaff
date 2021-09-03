@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     var embed = new discord.MessageEmbed()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
             .setTitle("Spijkenisse Roleplay - Suggesties")
-            .setDescription(`**Suggestie:**\n ${args.join(" ")}\n**Ingezonden door:**\n${message.member}\n\n*Laat jou suggestie achter met* spn/suggestie (suggestie)`)
+            .setDescription(`**Suggestie:**\n ${args.join(" ")}\n**Ingezonden door:**\n${message.member}\n\n**Laat jou suggestie achter met spn/suggestie (suggestie)**`)
             .setColor("AQUA")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
 
     channel.send(embed);
 
-    var msg = await channel(embed)
+    var msg = await message.member.guild.channels.chache.get("866337040759783454");
 
     await msg.react('✅');
     await msg.react('❌');
