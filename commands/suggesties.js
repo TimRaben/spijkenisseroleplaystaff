@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
 
     var embed = new discord.MessageEmbed()
-            .setThumbnail(message.member.displayAvatarURL({ dynamic: true}))
+            .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
             .setTitle("Spijkenisse Roleplay - Suggesties")
             .setDescription(`**Suggestie:**\n ${args.join(" ")}\n**Ingezonden door:**\n${message.member}\n\n*Laat jou suggestie achter met* spn/suggestie (suggestie)`)
             .setColor("AQUA")
