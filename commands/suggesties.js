@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     var embed = new discord.MessageEmbed()
             .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true})}`)
             .setTitle("Spijkenisse Roleplay - Suggesties")
-            .setDescription(`**Suggestie:**\n${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*``Laat jou suggestie achter met ``spn/suggestie (suggestie)``*`)
+            .setDescription(`**Suggestie:**\n ${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie achter met ``spn/suggestie (suggestie)```)
             .setColor("RANDOM")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!channel) return;
 
-    var msg = await channel(embed)
+    var msg = await message.channel.send(embed)
 
     await msg.react('✅');
     await msg.react('❌');
