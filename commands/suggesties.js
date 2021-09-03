@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **-** Sorry, jij kan geen Roleplay Hosten!");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **-** Sorry, jij kan geen Suggestie aanmaken!");
 
     if (!args[0]) return message.reply(":x: **-** Geef een suggestie op!``");
 
