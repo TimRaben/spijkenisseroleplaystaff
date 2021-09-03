@@ -24,10 +24,8 @@ module.exports.run = async (client, message, args) => {
 
     if (!channel) return;
 
-    var msg = await channel(embed)
-
-    await msg.react('✅');
-    await msg.react('❌');
+    await channel.react('✅');
+    await channel.react('❌');
 
 }
 
