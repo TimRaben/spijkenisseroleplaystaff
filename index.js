@@ -44,10 +44,10 @@ client.on("ready", async () => {
 
     setInterval(() => {
         const statuses = [
-            `Spelers`,
-            `Moderatie`,
-            `Spijkenisse Roleplay`,
+            `spn/help`,
             `Roleplays`,
+            `Spijkenisse Roleplay`,
+            `Spelers`,
             `Commands`,
         ]
     
