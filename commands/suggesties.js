@@ -16,10 +16,16 @@ module.exports.run = async (client, message, args) => {
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
-            return message.channel.send(embed);
+            var channel = message.member.guild.channels.cache.get("866337040759783454");
  
-                embed.react('✅');
-                embed.react('❌');
+        if (!channel) return;
+
+    channel.send(embed);
+
+    var msg = await message.send(embed)
+
+    await msg.react('✅');
+    await msg.react('❌');
 
 }
 
