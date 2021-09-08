@@ -12,16 +12,14 @@ module.exports.run = async (client, message, args) => {
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
             .setTitle("Spijkenisse Roleplay - Suggestie")
             .setDescription(`**Suggestie:**\n${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
-            .setColor("RANDOM")
+            .setColor("BLUE")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
 
             await embed.react('✅');
             await embed.react('❌');
 
-            return message.channel.send(embed);
- 
-        
+            return message.channel.send(embed);       
 
 }
 
