@@ -9,12 +9,12 @@ module.exports.run = async (client, message, args) => {
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
 
     var embed = new discord.MessageEmbed()
-            .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true})}`)
+            .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
             .setTitle("Spijkenisse Roleplay - Suggestie")
             .setDescription(`**Suggestie:**\n${args.join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
             .setColor("RANDOM")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
-            .setTimestamp();
+            .setTimestamp()
 
             await embed.react('✅');
             await embed.react('❌');
