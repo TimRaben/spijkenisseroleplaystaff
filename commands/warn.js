@@ -6,8 +6,6 @@ module.exports.run = async (client, message, args) => {
 
     // !warn spelerNaam redenen hier.
 
-    message.delete();
-
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("sorry jij kan dit niet");
 
     if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
@@ -44,7 +42,7 @@ module.exports.run = async (client, message, args) => {
         **Reden: ** ${reason}`)
         .addField("Aantal warns", warns[warnUser.id].warns);
 
-    var channel = message.member.guild.channels.cache.get("866379875904520202");
+    var channel = message.member.guild.channels.cache.get("866337102185365504");
 
     if (!channel) return;
 
