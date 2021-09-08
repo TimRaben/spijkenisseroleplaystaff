@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`**Suggestie:**\n${args.join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
             .setColor("RANDOM")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
-            .setTimestamp()
+            .setTimestamp();
 
             await embed.react('✅');
             await embed.react('❌');
