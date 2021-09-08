@@ -46,22 +46,22 @@ module.exports.run = async (client, message, args) => {
 
     channel.send(embed);
 
-    if (warns[warnUser.id].warns == 3) {
+    if (warns[warnUser.id].warns == 8) {
 
         var embed = new discord.MessageEmbed()
             .setColor("#ff0000")
             .setDescription("PAS OP")
-            .addField("Bericht", "Je hebt nog een waarschuwing voor een ban.");
+            .addField("Bericht", "Je hebt nog een waarschuwing voor een kick.");
 
         message.channel.send(embed);
 
-    } else if (warns[warnUser.id].warns == 4) {
+    } else if (warns[warnUser.id].warns == 8) {
         message.guild.member(warnUser).ban(reason);
-        message.channel.send(`${warnUser} is gekickt wegens te veel Warnings!`);
+        message.channel.send(`${warnUser} is gekickt omdat hij te veel Warnings had!`);
     
-    } else if (warns[warnUser.id].warns == 6) {
+    } else if (warns[warnUser.id].warns == 15) {
     message.guild.member(warnUser).ban(reason);
-    message.channel.send(`${warnUser} is verbannen wegens te veel Warnings!`);
+    message.channel.send(`${warnUser} is verbannen omdat hij te veel Warnings had!`);
     }
 }
 
