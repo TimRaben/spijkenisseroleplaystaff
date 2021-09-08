@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
         .setTitle("Spijkenisse Roleplay - Warnings")
         .setFooter(message.member.displayName, message.author.displayAvatarURL)
         .setTimestamp()
-        .setDescription(`**Persoon:** ${warnUser} **-** ${message.mentions.users}\n**Warning door:** ${message.author}\n**Reden: ** ${reason}`)
+        .setDescription(`**Persoon:** ${warnUser} **-** ${args[0].displayName}\n**Warning door:** ${message.author}\n**Reden: ** ${reason}`)
         .addField("Aantal warns", warns[warnUser.id].warns);
 
     var channel = message.member.guild.channels.cache.get("866337102185365504");
