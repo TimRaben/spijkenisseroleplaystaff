@@ -13,9 +13,9 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`**\n**Er is een overval gestart! Bekijk hier onder de nodige Informatie!\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.members.author}\n**Playstation naam:** ${args[1]}\n**Tijd van melding:** ${message.createdTimestamp}\n**Hulpdiensten:** Politie, DSI & KMAR`)
             .setTimestamp()
             .setFooter("Spijkenisse Roleplay • Overval")
-            .setColor("RED")
+            .setColor("LIGHTRED")
 
-        return message.channel.send(`<@&866336951632003072> <@&866336897902575646> <@$866336909693550612>`, overvalEmbed);
+        return message.channel.send(overvalEmbed);
 }
 
     module.exports.help = {
