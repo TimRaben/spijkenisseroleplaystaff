@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply(":x: **-** Jij bent niet gemachtigd dit commando uit te voeren!");
+    if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply(":x: **-** Jij bent niet gemachtigd dit commando uit te voeren!");
 
     if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply(":x: **-** Geen Permissies!");
 
