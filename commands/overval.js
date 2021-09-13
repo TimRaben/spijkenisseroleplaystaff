@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
             .setFooter("Spijkenisse Roleplay • Overval")
             .setColor("LIGHTRED")
 
-        return message.channel.send(overvalEmbed, '<&866336898400911361> <&866336951632003072> <&866336909693550612>');
+        return message.channel.send('<&866336898400911361> <&866336951632003072> <&866336909693550612>', overvalEmbed);
 }
 
     module.exports.help = {
