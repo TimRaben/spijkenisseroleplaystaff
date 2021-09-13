@@ -10,12 +10,12 @@ module.exports.run = async (client, message, args) => {
 
     var overvalEmbed = new discord.MessageEmbed()
             .setTitle("Spijkenisse Roleplay - Overval")
-            .setDescription(`**\n**Er is een overval gestart! Bekijk hier onder de nodige Informatie!\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.members.displayName}\n**Playstation naam:** ${args[1]}\n**Tijd van melding:** ${message.createdTimestamp}\n**Hulpdiensten:** Politie, DSI & KMAR`)
+            .setDescription(`**\n**Er is een overval gestart! Bekijk hier onder de nodige Informatie!\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.member.author}\n**Playstation naam:** ${args[1]}\n**Tijd van melding:** ${message.createdTimestamp}\n**Hulpdiensten:** Politie, DSI & KMAR`)
             .setTimestamp()
             .setFooter("Spijkenisse Roleplay • Overval")
             .setColor("LIGHTRED")
 
-        return message.channel.send(overvalEmbed, `<&866336898400911361> <&866336951632003072> <&866336909693550612>`);
+        return message.channel.send(overvalEmbed, '<&866336898400911361> <&866336951632003072> <&866336909693550612>');
 }
 
     module.exports.help = {
