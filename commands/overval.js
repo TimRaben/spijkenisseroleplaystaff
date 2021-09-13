@@ -10,9 +10,10 @@ module.exports.run = async (client, message, args) => {
 
     var overvalEmbed = new discord.MessageEmbed()
             .setTitle("Spijkenisse Roleplay - Overval")
-            .setDescription(`**Er is een overval gestart! Bekijk hier onder de nodige Informatie! De Hulpdiensten zijn snel ter plaatsen! Heb nog even geduld!**\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.member.author}\n**Playstation naam:** ${args[1]}\n**Tijd van melding:** ${message.createdTimestamp}\n**Hulpdiensten:** Politie, DSI & KMAR`)
+            .setDescription(`**Er is een overval gestart! Bekijk hier onder de nodige Informatie! De Hulpdiensten zijn snel ter plaatsen! Heb nog even geduld!**\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.member.author}\n**Playstation naam:** ${args[1]}\n**Hulpdiensten:** Politie, DSI & KMAR`)
+            .setThumbnail('https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg')
             .setTimestamp()
-            .setFooter("Spijkenisse Roleplay • Overval")
+            .setFooter(`${message.author.displayAvatarURL({ dynamic: true})} • Spijkenisse Roleplay • Overval`)
             .setColor("RED")
 
         return message.channel.send('<@&866336898400911361> <@&866336951632003072> <@&866336909693550612>', overvalEmbed);
