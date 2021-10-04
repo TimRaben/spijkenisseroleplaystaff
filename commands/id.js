@@ -13,7 +13,8 @@ module.exports = {
             "**Wat is jou Geboortedatum in de Roleplay?**",
             "**Wat is jou Geslacht? (Man of Vrouw)**",
             "**Wat is je Lengte?**",
-            "**Wat is jou Playstation Naam?**",
+            "**Wat is jou Playstation Naam?**", 
+            '**Je hebt succesvol een Identiteitskaart aangemaakt!**'
         ];
 
         let collectCounter = 0;
@@ -53,7 +54,7 @@ module.exports = {
                         .setTitle('Spijkenisse Roleplay - Identiteitskaart')
                         .addField('Spijkenisse Indentiteitskaart', `<:SPNLogo:889759629305864253> - Koninklijk der Spijkenisse`)
                         .addField('Kingdom of the Spijkenisse Identity Card', 'Spijkenisse Roleplay')
-                        .setThumbnail('https://www.google.com/url?sa=i&url=https%3A%2F%2Fnl.wikipedia.org%2Fwiki%2FPaspoort&psig=AOvVaw0oKADrRYr9o-gfmUDecyyl&ust=1633434507789000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDW7u7XsPMCFQAAAAAdAAAAABAD')
+                        .setThumbnail(`https://www.google.com/url?sa=i&url=https%3A%2F%2Fnl.wikipedia.org%2Fwiki%2FPaspoort&psig=AOvVaw0oKADrRYr9o-gfmUDecyyl&ust=1633434507789000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDW7u7XsPMCFQAAAAAdAAAAABAD`)
                         .setDescription(mappedResponses)
                         .setColor('#ff6047')
                         .setTimestamp()
