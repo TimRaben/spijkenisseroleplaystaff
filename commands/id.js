@@ -51,7 +51,7 @@ module.exports = {
                             message.author.displayAvatarURL({ dynamic: true})
                         )
                         .setTitle('Spijkenisse Roleplay - Identiteitskaart')
-                        .addField('Spijkenisse Indentiteitskaart', `:SPNLogo: - Koninklijk der Spijkenisse`)
+                        .addField('Spijkenisse Indentiteitskaart', `<https://cdn.discordapp.com/emojis/889759629305864253.png?size=128> - Koninklijk der Spijkenisse`)
                         .addField('Kingdom of the Spijkenisse Identity Card', 'Spijkenisse Roleplay')
                         .setDescription(mappedResponses)
                         .setColor('#ff6047')
