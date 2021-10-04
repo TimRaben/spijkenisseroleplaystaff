@@ -45,7 +45,7 @@ module.exports = {
                 .join("\n\n");
 
                 appsChannel.send(
-                    new MessageEmbed()
+                    new discord.MessageEmbed()
                         .setAuthor(
                             message.author.tag, 
                             message.author.displayAvatarURL({ dynamic: true})
