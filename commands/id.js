@@ -8,12 +8,12 @@ module.exports = {
      */
     run: async (client, message, args) => {
         const questions = [
-            "**Wat is jou naam + achternaam?**",
-            "**Wat is jou leeftijd in de Roleplay?**",
-            "**Wat is jou geboortedatum in de Roleplay?**",
-            "**Wat is jou geslacht? (Man of Vrouw)**",
-            "**Wat is je lengte?**",
-            "**Wat is jou Playstation Name?**",
+            "**Wat is jou Naam + Achternaam?**",
+            "**Wat is jou Leeftijd in de Roleplay?**",
+            "**Wat is jou Geboortedatum in de Roleplay?**",
+            "**Wat is jou Geslacht? (Man of Vrouw)**",
+            "**Wat is je Lengte?**",
+            "**Wat is jou Playstation Naam?**",
         ];
 
         let collectCounter = 0;
@@ -40,7 +40,7 @@ module.exports = {
                 let index = 1;
                 const mappedResponses = collected
                 .map((msg) => {
-                    return `${index++}) ${questions[endCounter++]}\n${msg.content}`;
+                    return `${index++}. ${questions[endCounter++]}\n${msg.content}`;
                 })
                 .join("\n\n");
 
@@ -51,6 +51,9 @@ module.exports = {
                             message.author.displayAvatarURL({ dynamic: true})
                         )
                         .setTitle('Spijkenisse Roleplay - Identiteitskaart')
+                        .addField(':SPNLogo: - Koninklijk der Spijkenisse')
+                        .addField("Spijkenisse Identiteitskaart")
+                        .addField("Kingdom of the Spijkenisse Identity Card")
                         .setDescription(mappedResponses)
                         .setColor('#ff6047')
                         .setTimestamp()
