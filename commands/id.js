@@ -14,7 +14,6 @@ module.exports = {
             "**Wat is jou Geslacht? (Man of Vrouw)**",
             "**Wat is je Lengte?**",
             "**Wat is jou Playstation Naam?**", 
-            '**Je hebt succesvol een Identiteitskaart aangemaakt!**'
         ];
 
         let collectCounter = 0;
