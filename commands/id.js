@@ -1,7 +1,6 @@
-const { Client, Message, MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
 
 module.exports = {
-    name: "id",
     /**
      * @param {Client} client
      * @param {Message} message
@@ -61,3 +60,8 @@ module.exports = {
     },
 };
 
+module.exports.help = {
+    name: "id",
+    description: "Geeft al de verschillende commands",
+    category: "Informatie"
+}
