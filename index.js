@@ -45,10 +45,10 @@ client.on("ready", async () => {
     setInterval(() => {
         const statuses = [
             `🎫 - Tickets`,
-            `💬 - ${me.guild.channelCount} Kanalen`,
+            `💬 - ${guild.channelCount} Kanalen`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - ${me.guild.memberCount} Leden`,
+            `👥 - ${guild.memberCount} Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
