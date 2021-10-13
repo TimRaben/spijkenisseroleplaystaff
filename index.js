@@ -48,7 +48,7 @@ client.on("ready", async () => {
             `💬 - **179** Kanalen`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - **${members.users.cache.size}** Leden`,
+            `👥 - **921** Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
