@@ -44,11 +44,11 @@ client.on("ready", async () => {
 
     setInterval(() => {
         const statuses = [
-            `spn/help`,
-            `Roleplays`,
-            `Spijkenisse Roleplay`,
-            `Spelers`,
-            `Commands`,
+            `🎫 - Tickets`,
+            `💬 - ${message.guild.channelCount} Kanalen`,
+            `💳 - ID's | spn/id`,
+            `🔰 - 14 Staffleden`,
+            `👥 - ${message.guild.memberCount} Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]

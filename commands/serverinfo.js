@@ -1,18 +1,11 @@
-const discord = require("discord.js");
-
 module.exports.run = async (client, message, args) => {
 
-    var serverEmbed = new discord.MessageEmbed()
-            .setDescription("Zet de beschrijving")
-            .setColor("#kleur")
-            .addField("Bot naam", client.user.username)
-            .addField("Je bent deze server gejoind op", message.member.joinedAt)
-            .addField("Totaal memebers", message.guild.memberCount);
-
-        return message.channel.send(serverEmbed);
+    return message.channel.send(":x: **|** Dit Commando is momenteel nog niet in Werking!\nDeze Command is mogelijk beschikbaar over: *Niet bekend!*");
 
 }
 
 module.exports.help = {
-    name: "serverinfo"
+    name: "serverinfo",
+    description: "Geeft al de verschillende commands",
+    category: "Informatie"
 }
