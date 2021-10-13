@@ -40,15 +40,17 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
+    targetGuild = client.guilds.get('866238268277784586')
+
     console.log(`${client.user.username} is online.`);
 
     setInterval(() => {
         const statuses = [
             `🎫 - Tickets`,
-            `💬 - ${guild.channelCount} Kanalen`,
+            `💬 - ${targetGuild.channelCount} Kanalen`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - ${guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Leden`,
+            `👥 - ${member.guild.memberCount} Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
