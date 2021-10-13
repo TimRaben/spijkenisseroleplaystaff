@@ -48,7 +48,7 @@ client.on("ready", async () => {
             `💬 - ${guild.channelCount} Kanalen`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - ${guild.members.filter(member => !member.user.bot).size} Leden`,
+            `👥 - ${guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
