@@ -1,83 +1,19 @@
-const Discord = require('discord.js');
-const disbut = require("discord-buttons");
-const { MessageMenuOption, MessageMenu } = require("discord-buttons");
+const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-      //--------------------------------------S T A R T---------------------------------------
+    var helpEmbed = new discord.MessageEmbed()
+            .setDescription(`__Staff Commando's__\n**spn/ban (persoon) (reden)** - Verban iemand.\n**spn/warn (persoon (reden)** - Geef iemand een Warn.\n**spn/kick (persoon) (reden)** - Verwijder iemand.\n**spn/roleplay-host (Tijd) (Host) (Co Host) (PSN Naam) (Tags) (Toevoegingen)** - Host een Roleplay.\n**spn/clear (aantal)** - Verwijder een bepaald aantal berichten.\n**spn/giveaway (winnercount) (tijd) (item)** - Host een Giveaway\n\n__Algemene Commando's__\n**spn/help** - Zie dit menu.\n**spn/info** - Krijg Server Info.\n**spn/ping** - Zie de ms snelheid van de BOT.\n**spn/say (bericht)** - Stuur een Commando via de BOT.\n**spn/suggestie (suggestie)** - Geef een suggestie.\n\n__Hulpdiensten Commando's__\n**spn/boete (@persoon) (boete in getallen bijv: 1250) (Celstraf in maanden) (voorwaardelijke celstraf) (Strafbare feit(en)** - Geef iemand een Boete\n**spn/112 (incident) (locatie)** - SOON...\n**spn/overval (bank/winkel/juwelier) (PSN)** - Start een overval.`)
+            .setColor("YELLOW")
+            .setTitle("Spijkenisse Roleplay - Help Menu")
+            .setThumbnail("https://images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%3Fsize%3D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png")
+            .setFooter(`Spijkenisse Roleplay • Help Menu`, message.author.displayAvatarURL({ dynamic: true}))
+            .setTimestamp()
 
-        const embed = new Discord.MessageEmbed()
-        .setDescription("Klik op de Button hieronder!");
+        return message.channel.send(helpEmbed);
 
-        const embed1 = new Discord.MessageEmbed()
-        .setColor("GREEN")
-        .setDescription("Hlep 1");
+}
 
-        const embed2 = new Discord.MessageEmbed()
-        .setColor("BLUE")
-        .setDescription("Hlep 2");
-
-        const embed3 = new Discord.MessageEmbed()
-        .setColor("RED")
-        .setDescription("Hlep 3");
-
-
-        //-----------------------------OPTIONS----------------------
-
-        let option1 = new MessageMenuOption()
-        .setLabel('📌- Algemeen Helpmenu - 📌')
-        .setEmoji('📌')
-        .setValue('Algemene Commands')
-        .setDescription('Momenteel nog niet beschikbaar! Word beschikbaar over: *nog geen tijd en datum beschikbaar..*')
-
-        let option2 = new MessageMenuOption()
-        .setLabel('📚 - Informatie Menu')
-        .setEmoji('📚')
-        .setValue('Informatie Commands')
-        .setDescription('Momenteel nog niet beschikbaar! Word beschikbaar over: *nog geen tijd en datum beschikbaar..*')
-
-        let option3 = new MessageMenuOption()
-        .setLabel('🔨 - Staff Menu - 🔨')
-        .setEmoji('🔨')
-        .setValue('Staff Commands')
-        .setDescription('Momenteel nog niet beschikbaar! Word beschikbaar over: *nog geen tijd en datum beschikbaar..*')
-        
-    let select = new MessageMenu()
-        .setID('Help Menu - Selecteren')
-        .setPlaceholder('Klik op een optie om een Help Menu te selecteren!')
-        .setMaxValues(1)
-        .setMinValues(1)
-        .addOptions(option1, option2, option3)
-
-        //-----------------------------OPTIONS----------------------
-    
-    const Sendmenu = await message.channel.send(embed, select);
-
-    const filter = ( button ) => button.clicker.user.id === message.author.id; //if only the message author click thenit will work
-    let collector = Sendmenu.createMenuCollector(filter, { time : 10000 });
-
-    collector.on("collect" , (b) => {
-        if(b.values[0] == "📌 - Algemeen Help Menu") {
-            Sendmenu.edit(embed1, select)
-        }
-
-        if(b.values[0] == "📚 - Informatie Help Menu") {
-            Sendmenu.edit(embed2, select)
-        }
-
-        if(b.values[0] == "🔨 - Staff Help Menu") {
-            Sendmenu.edit(embed3, select)
-        }
-
-        b.reply.defer();
-    })
-
-    collector.on("end", (b) => {
-        Sendmenu.edit("Helaas is het niet meer mogelijk om dit help commando te gebruken typ nogmaals spn/help")
-    })
-
-};
-
-    module.exports.help = {
-        name: "help"
-    }
+module.exports.help = {
+    name: "help"
+}
