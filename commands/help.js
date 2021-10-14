@@ -2,11 +2,8 @@ const Discord = require('discord.js');
 const disbut = require("discord-buttons");
 const { MessageMenuOption, MessageMenu } = require("discord-buttons");
 
+module.exports.run = async (client, message, args) => {
 
-module.exports = {
-  name: "help",
-   aliases: ["hlp"],
-  run: async (client, message, args ) => {
       //--------------------------------------S T A R T---------------------------------------
 
         const embed = new Discord.MessageEmbed()
@@ -78,5 +75,8 @@ module.exports = {
     collector.on("end", (b) => {
         Sendmenu.edit("Helaas is het niet meer mogelijk om dit help commando te gebruken typ nogmaals spn/help")
     })
+
+    module.exports.help = {
+        name: "roleplay-host"
     }
   };
