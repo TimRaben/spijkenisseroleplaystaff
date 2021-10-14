@@ -76,7 +76,8 @@ module.exports.run = async (client, message, args) => {
         Sendmenu.edit("Helaas is het niet meer mogelijk om dit help commando te gebruken typ nogmaals spn/help")
     })
 
+};
+
     module.exports.help = {
-        name: "roleplay-host"
+        name: "help"
     }
-  };
