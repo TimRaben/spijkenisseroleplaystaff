@@ -2,7 +2,6 @@ const discord = require("discord.js");
 const pagination = require('discord.js-pagination');
 
 module.exports.run = async (client, prefix, message, args) => {
-    if(!message.content.startwith(prefix)) return;
 
     const help1 = new discord.MessageEmbed()
     .setTitle('Spijkenisse Roleplay - Help Menu')
