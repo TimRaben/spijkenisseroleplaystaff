@@ -1,17 +1,36 @@
 const discord = require("discord.js");
+const pagination = require('discord.js-pagination');
 
 module.exports.run = async (client, message, args) => {
+    if(!message.content.startwith(prefix)) return;
 
-    var helpEmbed = new discord.MessageEmbed()
-            .setDescription(`__Staff Commando's__\n**spn/ban (persoon) (reden)** - Verban iemand.\n**spn/warn (persoon (reden)** - Geef iemand een Warn.\n**spn/kick (persoon) (reden)** - Verwijder iemand.\n**spn/roleplay-host (Tijd) (Host) (Co Host) (PSN Naam) (Tags) (Toevoegingen)** - Host een Roleplay.\n**spn/clear (aantal)** - Verwijder een bepaald aantal berichten.\n**spn/giveaway (winnercount) (tijd) (item)** - Host een Giveaway\n\n__Algemene Commando's__\n**spn/help** - Zie dit menu.\n**spn/info** - Krijg Server Info.\n**spn/ping** - Zie de ms snelheid van de BOT.\n**spn/say (bericht)** - Stuur een Commando via de BOT.\n**spn/suggestie (suggestie)** - Geef een suggestie.\n\n__Hulpdiensten Commando's__\n**spn/boete (@persoon) (boete in getallen bijv: 1250) (Celstraf in maanden) (voorwaardelijke celstraf) (Strafbare feit(en)** - Geef iemand een Boete\n**spn/112 (incident) (locatie)** - SOON...\n**spn/overval (bank/winkel/juwelier) (PSN)** - Start een overval.`)
-            .setColor("YELLOW")
-            .setTitle("Spijkenisse Roleplay - Help Menu")
-            .setThumbnail("https://images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%3Fsize%3D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png")
-            .setFooter(`Spijkenisse Roleplay • Help Menu`, message.author.displayAvatarURL({ dynamic: true}))
-            .setTimestamp()
+    const help1 = new discord.MessageEmbed()
+    .setTitle('Spijkenisse Roleplay - Help Menu')
+    .setColor('BLUE')
+    .setDescription(`Dit is ons Help Menu! Hieronder staan 2 emoji's eentje met een pijl naar links de andere wijst naar rechts, hieronder zie je alle categorieën met de pagina erbij, ga naar het Help Menu die jij wilt doormiddel van de pijltjes!\n\n**🔰 - Start Menu (Dit Menu) | Pagina 1**📌 - Algemene Commands | Pagina 2**\n**📚 - Informatieve Commands | Pagina 3**\n**🔨 - Staff Commands |  Pagina 4**\n**🎵 - Muziek Commands | Pagina 5**`)
 
-        return message.channel.send(helpEmbed);
+    const algemenecommands = new discord.MessageEmbed()
+    .setTitle('📌 - Help Menu - Algemene Commands - 📌')
+    .setDiscription(`Zie hier alle Algemene Commands!\n\n**spn/avatar -** Zie iemand Profiel Foto/Gif\n**spn/id -** Maak een Identiteitskaart\n**spn/overval -** Start een Overval\n**!suggest -** Laat een Idee achter waarmee wij de Server kunnen verbeteren!\n**!rank -** Zie jou huidige Level!\n**spn/ping -** Zie de Ping van de BOT\n\n**Soon...** binnenkort word er meer toegevoegd laat vooral je ideeën achter doormiddel van !suggest (suggestie)`)
+    .setColor('GREEN')
 
+    const infocommands = new discord.MessageEmbed()
+    .setTitle('📚 - Help Menu - Informatieve Commands - 📚')
+    .setDiscription(`Zie hier alle Informatieve Commands!\n\n**spn/info -** *nog niet beschikbaar..*\n**spn/serverinfo -** Zie de Server Informatie\n**spn/overval -** Start een Overval\n\n**Soon...** binnenkort word er meer toegevoegd laat vooral je ideeën achter doormiddel van !suggest (suggestie)\n**spn/ping -** Zie de Status van de BOT!`)
+    .setColor('ORANGE')
+
+
+    const pages = {
+        help1,
+        algemenecommands,
+        infocommands
+    }
+
+    const emoji = ["⬅", "➡"]
+
+    const timeout = '100000'
+
+    pagination(message, pages, emoji, timeout)
 }
 
 module.exports.help = {
