@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+const discord = require('discord.js')
 const pagination = require('discord.js-pagination');
 
 module.exports.run = async (client, prefix, message, args) => {
@@ -25,11 +25,11 @@ module.exports.run = async (client, prefix, message, args) => {
         .setTimestamp()
 
 
-    const pages = {
+    const pages = [
         help1,
         algemenecommands,
         infocommands
-    }
+    ]
 
     const emoji = ["⬅", "➡"]
 
