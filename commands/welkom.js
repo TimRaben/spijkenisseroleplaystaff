@@ -36,7 +36,3 @@ message.channel.send(welkomEmbed ,row);
     }
 
 }
-
-module.exports.help = {
-    name: "overval"
-}
