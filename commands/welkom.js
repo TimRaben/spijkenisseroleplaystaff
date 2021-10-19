@@ -1,8 +1,10 @@
 const discord  =  require("discord.js")
 const {MessageButton, MessageActionRow} = require("discord-buttons");
 module.exports.run = async (client, message, args) => {
+    
+    const channelID = '866336985374392320'
 
-    client.on('guildMemberAdd'), (member) => {
+    client.on('guildMemberAdd', (member) => {
         console.log(member)
 
         var welkomEmbed = new discord.MessageEmbed()
@@ -29,10 +31,9 @@ let button2 = new MessageButton()
 let row = new MessageActionRow()
   .addComponents(button, button2);
 
-message.member.guild.channels.cache.get("866379875904520202");
+  const channel = member.guild.channels.chache.get(channelID)
+message.channel.send(welkomEmbed ,row)
 
-message.channel.send(welkomEmbed ,row);
-
-    }
+    })
 
 }
