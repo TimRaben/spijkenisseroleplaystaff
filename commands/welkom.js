@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     client.on('guildMemberAdd', (member) => {
         console.log(member)
 
-        var welkomEmbed = discord.MessageEmbed()
+        var welkomEmbed = new discord.MessageEmbed()
             .setTitle("Spijkenisse Roleplay - Welkom")
             .setDescription(`Welkom <@${member.athor}>, hopelijk zien wij jou snel verschijnen bij de Roleplays!`)
             .setThumbnail("https://media.discordapp.net/attachments/866336989891264532/899585575798067230/standard_8.gif")
