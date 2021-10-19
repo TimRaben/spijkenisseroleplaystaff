@@ -16,23 +16,23 @@ module.exports.run = async (client, message, args) => {
             .setFooter("Spijkenisse Roleplay • Welkom")
             .setColor("BLUE")
     
-let button = new MessageButton()
-  .setStyle('url')
-  .setURL('https://spijkenisseroleplay.craftingstore.net') 
-  .setLabel('Store')
-  .setEmoji("💰")
+  let button = new MessageButton()
+    .setStyle('url')
+    .setURL('https://spijkenisseroleplay.craftingstore.net') 
+    .setLabel('Store')
+    .setEmoji("💰")
   
-let button2 = new MessageButton()
-  .setStyle('url')
-  .setURL('https://discord.com/channels/866238268277784586/866336995805888572/889420676694417429') 
-  .setLabel('Regels')
-  .setEmoji("📚")
+  let button2 = new MessageButton()
+    .setStyle('url')
+    .setURL('https://discord.com/channels/866238268277784586/866336995805888572/889420676694417429') 
+    .setLabel('Regels')
+    .setEmoji("📚")
 
-let row = new MessageActionRow()
-  .addComponents(button, button2);
+  let row = new MessageActionRow()
+    .addComponents(button, button2);
 
-  const channel = member.guild.channels.chache.get(channelID)
-message.channel.send(welkomEmbed ,row)
+    const channel = member.guild.channels.chache.get(channelID)
+      channel.send(welkomEmbed ,row)
 
     })
 
