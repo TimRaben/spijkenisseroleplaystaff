@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (message, args) => {
 
 if(command == "ticket-setup") {
 
@@ -22,11 +22,6 @@ if(command == "ticket-setup") {
     settings.set(`${message.guild.id}-sollicitatie`, sent.id);
 
     message.channel.send("Sollicitatie Setup succesvol!")
-}
-
-if(command == "close", "behandeld") {
-    if(!message.channel.name.includes("politie-", "ambulance-", "brandweer-", "dsi-", "anwb-")) return message.channel.send("Je kan dit momenteel niet gebruiken!")
-    message.channel.delete();
 }
 };
 
