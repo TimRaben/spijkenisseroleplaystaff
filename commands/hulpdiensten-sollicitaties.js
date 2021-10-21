@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async (message, args) => {
+module.exports.run = async (client, message, args) => {
 
 if(command == "ticket-setup") {
 
@@ -25,7 +25,7 @@ if(command == "ticket-setup") {
 }
 };
 
-client.on('messageReactionAdd', async (reaction, user) => {
+('messageReactionAdd', async (reaction, user) => {
 if(user.partial) await user.fetch();
 if(reaction.partial) await reaction.fetch();
 if(reaction.message.partial) await reaction.message.fetch();
