@@ -7,16 +7,16 @@ module.exports.run = async (client, message, args) => {
 
     let sent = channel.send(new discord.MessageEmbed()
         .setTitle("Spijkenisse Roleplay - Sollicitaties")
-        .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **- Brandweer**\n🐱‍👤 **Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
+        .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **- Brandweer**\n🐱‍👤 **-** Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
         .setFooter("Spijkenisse Roleplay - Hulpdiensten - Sollicitaties")
         .setColor("00ff00")
     );
 
-    sent.react('🚓');
-    sent.react('🚑');
-    sent.react('🚒');
-    sent.react('🐱‍👤');
-    sent.react('🔨')
+    await sent.react('🚓');
+    await sent.react('🚑');
+    await sent.react('🚒');
+    await sent.react('🐱‍👤');
+    await sent.react('🔨')
     settings.set(`${message.guild.id}-sollicitatie`, sent.id);
 
     message.channel.send("Sollicitatie Setup succesvol!")
