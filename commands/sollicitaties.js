@@ -24,7 +24,6 @@ module.exports.run = async (client, message, args) => {
         await msg.react('🔨');
 
     message.channel.send("Sollicitatie Setup succesvol!")
-}
 
 ('messageReactionAdd', async (reaction, user) => {
     if(user.partial) await user.fetch();
@@ -173,6 +172,8 @@ module.exports.run = async (client, message, args) => {
         })
     }
 });
+
+}
 
 module.exports.help = {
     name: "sollicitatie-setup"
