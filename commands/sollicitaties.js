@@ -23,8 +23,6 @@ module.exports.run = async (client, message, args) => {
         await msg.react('💣');
         await msg.react('🔨');
 
-    message.channel.send("Sollicitatie Setup succesvol!")
-
 ('messageReactionAdd', async (reaction, user) => {
     if(user.partial) await user.fetch();
     if(reaction.partial) await reaction.fetch();
