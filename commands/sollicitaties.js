@@ -23,8 +23,6 @@ module.exports.run = async (client, message, args) => {
         await msg.react('💣');
         await msg.react('🔨');
 
-    settings.set(`${message.guild.id}-sollicitatie`, sent.id);
-
     message.channel.send("Sollicitatie Setup succesvol!")
 }
 
