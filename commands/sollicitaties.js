@@ -11,14 +11,11 @@ module.exports.run = async (client, message, args) => {
         .setFooter("Spijkenisse Roleplay - Hulpdiensten - Sollicitaties")
         .setColor("00ff00")
         );
-
-    var msg = await message.channel.send(embed)
-
-    await msg.react('🚓');
-    await msg.react('🚑');
-    await msg.react('🚒');
-    await msg.react('🐱‍👤');
-    await msg.react('🔨')
+    embed.react('🚓');
+    embed.react('🚑');
+    embed.react('🚒');
+    embed.react('🐱‍👤');
+    embed.react('🔨')
 
     settings.set(`${message.guild.id}-sollicitatie`, sent.id);
 
