@@ -104,7 +104,7 @@ if(command == "sollicitatie-setup") {
     let channel = message.mentions.channels.first();
     if(!channel) return message.reply("Verkeerd Commando! Gebruik: `!sollicitatie-setup #channel`");
 
-    let sent = await channel.send(new discord.MessageEmbed()
+    let sent = channel.send(new discord.MessageEmbed()
         .setTitle("Spijkenisse Roleplay - Sollicitaties")
         .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **- Brandweer**\n🐱‍👤 **Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
         .setFooter("Spijkenisse Roleplay - Hulpdiensten - Sollicitaties")
