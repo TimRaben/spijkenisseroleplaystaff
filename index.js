@@ -57,6 +57,47 @@ client.on("ready", async () => {
 
 });
 
+client.on("message", async message => {
+
+    if (message.author.bot) return;
+
+    if (message.channel.type === "dm") return;
+
+
+    // var msg = message.content.toLowerCase();
+
+    // for (let i = 0; i < swearWords["vloekwoorden"].length; i++) {
+
+    //     if (msg.includes(swearWords["vloekwoorden"][i])) {
+
+    //         message.delete();
+
+    //         return message.reply("Gelieve niet te vloeken").then(msg => msg.delete({ timeout: 3000 }));
+
+    //     }
+
+    // }
+
+
+    var prefix = botConfig.prefix;
+
+    var messageArray = message.content.split(" ");
+
+
+    var command = messageArray[0];
+
+    if (!message.content.startsWith(prefix)) return;
+
+    //  Command handler
+    var arguments = messageArray.slice(1);
+
+    var commands = client.commands.get(command.slice(prefix.length));
+
+
+    if (commands) commands.run(client, message, arguments);
+
+});
+
 if(command == "sollicitatie-setup") {
     // ticket-setup #channel
 
@@ -234,45 +275,4 @@ const supportrole = (791436006007767060)
                 .setColor("00ff00"))
         })
     }
-});
-
-client.on("message", async message => {
-
-    if (message.author.bot) return;
-
-    if (message.channel.type === "dm") return;
-
-
-    // var msg = message.content.toLowerCase();
-
-    // for (let i = 0; i < swearWords["vloekwoorden"].length; i++) {
-
-    //     if (msg.includes(swearWords["vloekwoorden"][i])) {
-
-    //         message.delete();
-
-    //         return message.reply("Gelieve niet te vloeken").then(msg => msg.delete({ timeout: 3000 }));
-
-    //     }
-
-    // }
-
-
-    var prefix = botConfig.prefix;
-
-    var messageArray = message.content.split(" ");
-
-
-    var command = messageArray[0];
-
-    if (!message.content.startsWith(prefix)) return;
-
-    //  Command handler
-    var arguments = messageArray.slice(1);
-
-    var commands = client.commands.get(command.slice(prefix.length));
-
-
-    if (commands) commands.run(client, message, arguments);
-
 });
