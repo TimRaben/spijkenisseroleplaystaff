@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
      var embed = new discord.MessageEmbed()
         .setTitle("Spijkenisse Roleplay - Sollicitaties")
-        .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **-** Brandweer\n🐱‍👤 **-** Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
+        .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **-** Brandweer\n💣 **-** Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
         .setFooter("Spijkenisse Roleplay - Hulpdiensten - Sollicitaties")
         .setColor("00ff00")
  
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
         await msg.react('🚓');
         await msg.react('🚑');
         await msg.react('🚒');
-        await msg.react('🐱‍👤');
+        await msg.react('💣');
         await msg.react('🔨');
 
     settings.set(`${message.guild.id}-sollicitatie`, sent.id);
