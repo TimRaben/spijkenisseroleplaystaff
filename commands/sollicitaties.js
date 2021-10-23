@@ -10,8 +10,6 @@ module.exports.run = async (client, message, args) => {
         .setDescription("\nKlik op een Emoji onder dit bericht om te Solliciteren voor een bepaald Staatsbedrijf! Bekijk hieronder wat welke Emoji inhoud!\n\n🚓 **-** Politie\n🚑 **-** Ambulance\n🚒 **-** Brandweer\n🐱‍👤 **-** Dienst Speciale Interventies (DSI)\n🔨 **-** ANWB (Rijkswaterstaat)\n\nSolliciteer gerust wellicht zien wij jou binnenkort bij een van deze bedrijven!")
         .setFooter("Spijkenisse Roleplay - Hulpdiensten - Sollicitaties")
         .setColor("00ff00")
-
-        var channel = channel.send(embed)
  
         if (!channel) return;
 
