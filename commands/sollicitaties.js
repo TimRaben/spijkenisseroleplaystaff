@@ -12,8 +12,6 @@ module.exports.run = async (client, message, args) => {
         .setColor("00ff00")
         );
 
-    channel.send(embed);
-
     var msg = await message.channel.send(embed)
 
     await msg.react('🚓');
