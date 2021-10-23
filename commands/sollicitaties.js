@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
     embed.react('🚑');
     embed.react('🚒');
     embed.react('🐱‍👤');
-    embed.react('🔨')
+    embed.react('🔨');
 
     settings.set(`${message.guild.id}-sollicitatie`, sent.id);
 
