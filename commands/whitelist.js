@@ -22,7 +22,10 @@ module.exports.run = async (client, message, args) => {
     if (!muteRole3) return message.channel.send("⛔ **|** Foutcode");
     if (!muteRole4) return message.channel.send("⛔ **|** Foutcode");
 
-    await (mutePerson.roles.add(muteRole1.id, muteRole2.id, muteRole3.id, muteRole4.id));
+    await (mutePerson.roles.add(muteRole1.id));
+    await (mutePerson.roles.add(muteRole2.id));
+    await (mutePerson.roles.add(muteRole3.id));
+    await (mutePerson.roles.add(muteRole4.id));
     message.channel.send(`${mutePerson} is succesvol gewhitelist.`);
 
     }
