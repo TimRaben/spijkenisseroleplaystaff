@@ -17,7 +17,10 @@ module.exports.run = async (client, message, args) => {
     var muteRole2 = message.guild.roles.cache.get('866336939396169728');
     var muteRole3 = message.guild.roles.cache.get('866336940114837504');
     var muteRole4 = message.guild.roles.cache.get('866336938691395634');
-    if (!muteRole) return message.channel.send("⛔ **|** Foutcode");
+    if (!muteRole1) return message.channel.send("⛔ **|** Foutcode");
+    if (!muteRole2) return message.channel.send("⛔ **|** Foutcode");
+    if (!muteRole3) return message.channel.send("⛔ **|** Foutcode");
+    if (!muteRole4) return message.channel.send("⛔ **|** Foutcode");
 
     await (mutePerson.roles.add(muteRole1.id, muteRole2.id, muteRole3.id, muteRole4.id));
     message.channel.send(`${mutePerson} is succesvol gewhitelist.`);
