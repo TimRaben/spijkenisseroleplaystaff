@@ -13,8 +13,6 @@ module.exports.run = async (client, message, args) => {
 
     if (!mutePerson) return message.reply("⛔ **|** Geef geen geldige gebruiker op!");
 
-    if (mutePerson.hasPermission("MANAGE_MESSAGES")) return message.reply("⛔ **|** Sorry, je kan deze gebruiker niet whitelisten.");
-
     var muteRole = message.guild.roles.cache.get('866336919717675009', '866336939396169728', '866336940114837504', '866336938691395634');
     if (!muteRole) return message.channel.send("⛔ **|** Foutcode");
 
