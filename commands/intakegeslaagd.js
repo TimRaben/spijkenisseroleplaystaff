@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
         if(!Member) return message.channel.send('⛔ **|** Persoon niet gevonden!')
     
         let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === '» 🏡 | Inwoner Spijkenisse', '———INWONER———', '» 🌈 | Whitelisted', '———WHITELISTED———')
-        if(Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} is al gewhitelist.`)
+        if(Member.roles.cache.has(role2)) return message.channel.send(`${Member.displayName} is al gewhitelist.`)
         await Member.roles.add(role2)
         message.channel.send(`${Member.displayName} is succesvol gewhitelist.`)
     }
