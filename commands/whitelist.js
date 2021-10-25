@@ -3,6 +3,8 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
+    message.delete();
+
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("⛔ **|** Sorry! Jij hebt niet de juiste bevoegdheid om iemand te whitelisten.");
 
     if (!args[0]) return message.reply("⛔ **|** Geef geen geldige persoon op.");
