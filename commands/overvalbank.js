@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     if(!message.channel.name.includes("bankov-", "overval-", "ovbank-")) return message.channel.send(":x: **|** Dit is niet mogelijk in dit kanaal! Maak een overval kanaal aan en typ dit dan nogmaals.")
 
-    var begin = new (date + (time * 1000));
+    var begin = new ((time * 1000));
 
     if (begin) return message.channel.send('Type spn/bovs1')
 
