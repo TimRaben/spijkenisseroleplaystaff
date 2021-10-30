@@ -22,10 +22,10 @@ module.exports.run = async (client, message, args) => {
 
             var channel = message.member.guild.channels.cache.get("866337040759783454");
 
-        channel.send(embed);
+        var suggestemoji = channel.send(embed);
 
-        embed.react('✅');
-        embed.react('❌');  
+        suggestemoji.react('✅');
+        suggestemoji.react('❌');  
 
         message.channel.send(":white_check_mark:  **|**   Je hebt succesvol je suggestie verzonden!")
 
