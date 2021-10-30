@@ -37,6 +37,7 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+var guild = client.guild.chache.get('866238268277784586')
 
 client.on("ready", async () => {
 
@@ -45,10 +46,10 @@ client.on("ready", async () => {
     setInterval(() => {
         const statuses = [
             `🎫 - Tickets`,
-            `💬 - 179 Kanalen`,
+            `💬 - Tekst Berichten`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - 921 Leden`,
+            `👥 - ${guild} Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
