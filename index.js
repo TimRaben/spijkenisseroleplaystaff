@@ -37,8 +37,6 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-var guild = client.guild.chache.get('866238268277784586')
-
 client.on("ready", async () => {
 
     console.log(`${client.user.username} is online.`);
