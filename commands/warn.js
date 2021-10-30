@@ -22,7 +22,8 @@ module.exports.run = async (client, message, args) => {
     var warnEmbed = new discord.MessageEmbed()
         .setColor("RED")
         .setTitle("Spijkenisse Roleplay - Warnings")
-        .setFooter(message.author.displayAvatarURL, "Spijkenisse Roleplay • Waarschuwingen")
+        .setFooter("Spijkenisse Roleplay • Waarschuwingen • Alle Rechten Voorbehoud")
+        .setThumbnail("https://cdn.pixabay.com/photo/2013/07/12/13/58/warning-147699_960_720.png")
         .setTimestamp()
         .setDescription(`Er is zojuist een Warn uitgedeeld! Less hieronder verdere informatie!\n\n**Persoon:** ${warnUser} **-** ${warnUser.displayName}\n**Stafflid:** ${message.author}\n**Reden:** ${warnReden}\n\n*Ben jij het echt niet eens met jou Warn? Maak dat een ticket aan of PM het Stafflid die jou een warning heeft gegeven.* `)
 
