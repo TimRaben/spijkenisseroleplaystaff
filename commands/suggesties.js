@@ -27,9 +27,7 @@ module.exports.run = async (client, message, args) => {
         var msg = await message.channel.send(embed)
 
         await msg.react('✅');
-        await msg.react('❌');
-
-            return message.channel.send(embed);       
+        await msg.react('❌');  
 
 }
 
