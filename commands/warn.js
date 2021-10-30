@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.reply(":x: **|** Gelieve een Reden op te geven waarom je deze gebruiker een warning wilt geven!");
 
-    if (!message.guild.me.hasPermissions("MANAGE_MESSAGES")) return message.reply(":x: **|** Error! Gelieve dit door te geven aan een Eigenaar dan zal dit zo spoedig mogelijk gefixed worden!");
+    if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **|** Error! Gelieve dit door te geven aan een Eigenaar dan zal dit zo spoedig mogelijk gefixed worden!");
 
     var warnUser = message.guild.member(message.mention.users.first() || message.guild.members.get(args[0]));
 
