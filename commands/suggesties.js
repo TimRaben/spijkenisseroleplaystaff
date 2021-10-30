@@ -4,6 +4,8 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
+
+
     if (!args[0]) return message.reply(":x: **-** Geef een suggestie op!");
 
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
@@ -19,8 +21,6 @@ module.exports.run = async (client, message, args) => {
             .setTimestamp()
 
             var channel = message.member.guild.channels.cache.get("866337040759783454");
- 
-            if (!channel) return;
 
         channel.send(embed);
 
@@ -28,6 +28,8 @@ module.exports.run = async (client, message, args) => {
 
         await msg.react('✅');
         await msg.react('❌');  
+
+        await message.channel.send(":white_check_mark: **|** Je hebt succesvol je suggestie verzonden!")
 
 }
 
