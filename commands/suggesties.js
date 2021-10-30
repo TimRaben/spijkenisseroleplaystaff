@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         await embed.react('✅');
         await embed.react('❌');  
 
-        message.channel.send(":white_check_mark:   **|**   Je hebt succesvol je suggestie verzonden!")
+        message.channel.send(":white_check_mark:  **|**   Je hebt succesvol je suggestie verzonden!")
 
 }
 
