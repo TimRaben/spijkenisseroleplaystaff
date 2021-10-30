@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **|** Error! Gelieve dit door te geven aan een Eigenaar dan zal dit zo spoedig mogelijk gefixed worden!");
 
-    var warnUser = message.guild.member(message.mention.users.first() || message.guild.members.get(args[0]));
+    var warnUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
     var warnReden = args.slice(1).join(" ");
 
