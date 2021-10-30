@@ -8,10 +8,12 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
 
+    var Suggestie = args.slice(0).join(" ");
+
     var embed = new discord.MessageEmbed()
             .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
             .setTitle("Spijkenisse Roleplay - Suggestie")
-            .setDescription(`**Suggestie:**\n${args.slice(0).join(" ")}\n**Ingezonden door:**\n${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
+            .setDescription(`**Suggestie:** ${Suggestie}\n**Ingezonden door:** ${message.author}\n\n*Laat jou suggestie weten met* ``spn/suggestie (suggestie)```)
             .setColor("BLUE")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
