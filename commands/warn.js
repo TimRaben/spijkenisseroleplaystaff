@@ -1,70 +1,39 @@
 const discord = require("discord.js");
 const fs = require("fs");
-const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 module.exports.run = async (client, message, args) => {
 
-    // !warn spelerNaam redenen hier.
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: **|** Sorry! Jij bent niet gemachtigd om iemand een warnings te geven!");
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("sorry jij kan dit niet");
+    if (!args[0]) return message.reply(":x: **|** Gelieve een gebruiker op te geven!");
 
-    if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
+    if (!args[1]) return message.reply(":x: **|** Gelieve een Reden op te geven waarom je deze gebruiker een warning wilt geven!");
 
-    if (!args[1]) return message.reply("Gelieve een redenen op te geven.");
+    if (!message.guild.me.hasPermissions("MANAGE_MESSAGES")) return message.reply(":x: **|** Error! Gelieve dit door te geven aan een Eigenaar dan zal dit zo spoedig mogelijk gefixed worden!");
 
-    if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
+    var warnUser = message.guild.member(message.mention.users.first() || message.guild.members.get(args[0]));
 
-    var warnUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    var warnReden = args.slice(1).join(" ");
 
-    var reason = args.slice(1).join(" ");
+    if (!warnUser) return message.reply(":x: **|** Geen gebruiker gevonden! Zorg ervoor dat je een echte Speler tagged!");
 
-    if (!warnUser) return message.reply("Kan de gebruiker niet vinden.");
+    if (warnUser.hasPermission("KICK_MEMBERS")) return message.reply(":x: **|** Deze gebruiker is een hoger Stafflid deze persoon kan je daarom ook geen Warn geven!");
 
-    if (warnUser.hasPermission("KICK_MEMBERS")) return message.reply("Sorry je kunt deze gebruiker niet warnen");
-
-    if (!warns[warnUser.id]) warns[warnUser.id] = {
-        warns: 0
-    };
-
-    warns[warnUser.id].warns++;
-
-    fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-        if (err) console.log(err);
-    });
-
-    var embed = new discord.MessageEmbed()
-        .setColor("#ff0000")
+    var warnEmbed = new discord.MessageEmbed()
+        .setColor("RED")
         .setTitle("Spijkenisse Roleplay - Warnings")
-        .setFooter(message.member.displayName, message.author.displayAvatarURL)
+        .setFooter(message.author.displayAvatarURL, "Spijkenisse Roleplay • Waarschuwingen")
         .setTimestamp()
-        .setDescription(`**Persoon:** ${warnUser} **-** ${warnUser.displayName}\n**Warning door:** ${message.author}\n**Reden: ** ${reason}`)
-        .addField("Aantal warns", warns[warnUser.id].warns);
+        .setDescription(`Er is zojuist een Warn uitgedeeld! Less hieronder verdere informatie!\n\n**Persoon:** ${warnUser} **-** ${warnUser.displayName}\n**Stafflid:** ${message.author}\n**Reden:** ${warnReden}\n\n*Ben jij het echt niet eens met jou Warn? Maak dat een ticket aan of PM het Stafflid die jou een warning heeft gegeven.* `)
 
-    var channel = message.member.guild.channels.cache.get("866379875904520202");
+    var channel = message.guild.channels.cache.get("902193674576863292");
 
     if (!channel) return;
 
-    channel.send(embed);
+    channel.send(warnEmbed);
 
-    if (warns[warnUser.id].warns == 8) {
-
-        var embed = new discord.MessageEmbed()
-            .setColor("#ff0000")
-            .setDescription("PAS OP")
-            .addField("Bericht", "Je hebt nog een waarschuwing voor een kick.");
-
-        message.channel.send(embed);
-
-    } else if (warns[warnUser.id].warns == 8) {
-        message.guild.member(warnUser).ban(reason);
-        message.channel.send(`${warnUser} is gekickt omdat hij te veel Warnings had!`);
-    
-    } else if (warns[warnUser.id].warns == 15) {
-    message.guild.member(warnUser).ban(reason);
-    message.channel.send(`${warnUser} is verbannen omdat hij te veel Warnings had!`);
-    }
 }
 
 module.exports.help = {
     name: "warn"
-}
+} 
