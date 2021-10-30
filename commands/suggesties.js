@@ -24,12 +24,12 @@ module.exports.run = async (client, message, args) => {
 
         channel.send(embed);
 
-        var msg = await message.channel.send(embed)
+        var msg = await embed
 
         await msg.react('✅');
         await msg.react('❌');  
 
-        await message.channel.send(":white_check_mark: **|** Je hebt succesvol je suggestie verzonden!")
+        await message.channel.send(":white_check_mark:  **|**  Je hebt succesvol je suggestie verzonden!")
 
 }
 
