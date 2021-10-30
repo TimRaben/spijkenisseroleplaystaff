@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
             .setTitle("Spijkenisse Roleplay - Roleplays")
             .setDescription(`**\n• Datum:** ${args[0]}\n**• Tijd:** ${args[1]}\n\n**• Host:** ${args[2]}\n**• Co Host:** ${args[3]}\n\n**• Playstation Naam:** ${args[4]}\n\n**• Toevoegingen:** ${args.slice(6).join(" ")}\n\nTags: ${args[5]}`)
             .setColor("AQUA")
-            .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
+            .setFooter(`${message.member.displayName} • Spijkenisse Roleplay • Alle Rechten Voorbehoud`)
             .setTimestamp()
 
         var channel = message.member.guild.channels.cache.get("866336992001130496");

@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
             .setThumbnail("https://images-ext-2.discordapp.net/external/SFscr8WncU5Q09kCmenZ0gvMDK7FEdNRPDlAlIyuygg/%3Fsize%3D128/https/cdn.discordapp.com/icons/866238268277784586/a_a9ba29c9c1642df288042842c0070818.png")
             .addField("**Je bent deze server gejoind op:**", message.member.joinedAt)
             .addField("**Totale Members:**", message.guild.memberCount)
-            .setFooter("Spijkenisse Roleplay")
+            .setFooter("Spijkenisse Roleplay • Alle Rechten Voorbehoud")
             .setTimestamp()
 
         return message.channel.send(serverEmbed);

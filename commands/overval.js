@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`**OVERVAL!!**\n\nEr is een overval gestart! Bekijk hier onder de nodige Informatie! De Hulpdiensten zijn snel ter plaatsen! Heb nog even geduld!**\n\n__Informatie:__\n**Type Overval:** ${args[0]}\n**Discord Naam:** ${message.member.username}\n**Playstation naam:** ${args[1]}\n**Hulpdiensten:** Politie, DSI & KMAR`)
             .setThumbnail("https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg")
             .setTimestamp()
-            .setFooter("Spijkenisse Roleplay • Overval")
+            .setFooter("Spijkenisse Roleplay • Overval • Alle Rechten Voorbehoud")
             .setColor("RED")
 
         return message.channel.send('<@&866336898400911361> <@&866336951632003072> <@&866336909693550612>', overvalEmbed);

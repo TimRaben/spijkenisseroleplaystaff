@@ -57,6 +57,7 @@ module.exports = {
                         .setDescription(mappedResponses)
                         .setColor('#ff6047')
                         .setTimestamp()
+                        .setFooter('Spijkenisse Roleplay • Identiteitskaart • Alle Rechten Voorbehoud')
                 );
             }
         });

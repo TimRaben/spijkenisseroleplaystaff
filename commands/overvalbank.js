@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
             .setDescription("Je hebt succesvol een bank overval gestart, volg alle instructies die worden meegegeven.\n\nHet begint in 10 seconden, wees ervan bewust dat het verplicht is bij de bank te staan, de Politie is gealameerd!")
             .setColor("GREEN")
             .setTitle('Bank Overval Gestart...')
-            .setFooter("Spijkenisse Roleplay - Overvallen")
+            .setFooter("Spijkenisse Roleplay • Overvallen • Alle Rechten Voorbehoud")
             .setTimestamp()
 
         return message.channel.send(serverEmbed);

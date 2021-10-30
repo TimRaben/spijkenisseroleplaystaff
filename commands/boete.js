@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
             .setColor("RED")
             .setTitle("Spijkenisse Roleplay - Boete Systeem")
             .setTimestamp()
-            .setFooter("Boete Systeem • ")
+            .setFooter("Boete Systeem • Alle Rechten Voorbehoud")
 
         return message.channel.send(boeteEmbed);
 
