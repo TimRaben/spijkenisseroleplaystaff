@@ -49,7 +49,7 @@ client.on("ready", async () => {
             `💬 - Tekst Berichten`,
             `💳 - ID's | spn/id`,
             `🔰 - 14 Staffleden`,
-            `👥 - ${guild} Leden`,
+            `👥 - 920+ Leden`,
         ]
     
         const status = statuses[Math.floor(Math.random() * statuses.length)]
