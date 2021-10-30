@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
     var Suggestie = args.slice(0).join(" ");
 
     var embed = new discord.MessageEmbed()
-            .setThumbnail(message.author.displayAvatarURL({ dynamic: true}))
+            .setThumbnail(message.author.displayAvatarURL())
             .setTitle("Spijkenisse Roleplay - Suggestie")
-            .setDescription(`**Suggestie:** ${Suggestie}\n**Ingezonden door:** ${message.author}\n\nLaat jou suggestie weten met *spn/suggestie (suggestie)*`)
+            .setDescription(`Nieuwe Suggestie!\n\n**Suggestie:** ${Suggestie}\n**Ingezonden door:** ${message.author}\n\nLaat jou suggestie weten met *spn/suggestie (suggestie)*`)
             .setColor("BLUE")
             .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
             .setTimestamp()
