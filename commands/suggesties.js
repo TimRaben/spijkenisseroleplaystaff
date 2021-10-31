@@ -21,8 +21,6 @@ module.exports.run = async (client, message, args) => {
             .setTimestamp()
 
             var channel = message.member.guild.channels.cache.get("866337040759783454");
- 
-            if (!channel) return;
     
         channel.send(embed);
     
