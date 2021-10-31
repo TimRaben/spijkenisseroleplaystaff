@@ -21,14 +21,16 @@ module.exports.run = async (client, message, args) => {
             .setTimestamp()
 
             var channel = message.member.guild.channels.cache.get("866337040759783454");
-
-        var suggestemoji = channel.send(embed);
-
-        suggestemoji.react('✅');
-        suggestemoji.react('❌');  
-
-        message.channel.send(":white_check_mark:  **|**   Je hebt succesvol je suggestie verzonden!")
-
+ 
+            if (!channel) return;
+    
+        channel.send(embed);
+    
+        var msg = await message.channel.send(embed)
+    
+        await msg.react('✅');
+        await msg.react('❌');
+    
 }
 
 
