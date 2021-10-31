@@ -4,8 +4,6 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
-
-
     if (!args[0]) return message.reply(":x: **-** Geef een suggestie op!");
 
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms");
@@ -24,7 +22,7 @@ module.exports.run = async (client, message, args) => {
     
         channel.send(embed);
     
-        var msg = await message.channel.send(embed)
+        var msg = await (embed)
     
         await msg.react('✅');
         await msg.react('❌');
