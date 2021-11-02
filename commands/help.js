@@ -1,43 +1,36 @@
-const discord = require('discord.js')
-const pagination = require('discord.js-pagination');
+const ButtonPages = require('discord-button-pages');
+const discord = require('discord.js');
 
-module.exports.run = async (client, prefix, message, args) => {
+module.exports.run = async (client, message, args) => {
+    var helpmenu1 = new discord.MessageEmbed()
+        .setTitle(`Spijkenisse Roleplay - Help Menu`)
+        .setThumbnail('https://media.discordapp.net/attachments/838112437239939133/905102457741393990/standard_9.gif')
+        .setDescription(`Hallo! Dit is onze Help Pagina.\n\nHieronder kan je klikken op de buttons elke keer dat je op een button klikt ga je naar een andere pagina, klik op de buttons om het goede help menu te vinden die jij nodig hebt!\n\n**Pagina 1 |** *standaard menu (dit menu)*\n**Pagina 2 |** *algemene commands*\n**Pagina 3 |** *economie commands*\n**Pagina 4 |** *muziek commands*\n**Pagina 5 |** *staff commands*\n**Pagina 6 |** *management commands*\n\n``1️⃣ | Pagina 1 van de 6```)
+        .setFooter("Spijkenisse Roleplay • Help Menu • Start Menu");
 
-    var help1 = new discord.MessageEmbed()
-            .setTitle("Spijkenisse Roleplay - Help Menu")
-            .setColor('BLUE')
-            .setDescription(`Dit is ons Help Menu! Hieronder staan 2 emoji's eentje met een pijl naar links de andere wijst naar rechts, hieronder zie je alle categorieën met de pagina erbij, ga naar het Help Menu die jij wilt doormiddel van de pijltjes!\n\n**🔰 - Start Menu (Dit Menu) | Pagina 1**📌 - Algemene Commands | Pagina 2**\n**📚 - Informatieve Commands | Pagina 3**\n**🔨 - Staff Commands |  Pagina 4**\n**🎵 - Muziek Commands | Pagina 5**`)
-            .setFooter('Spijkenisse Roleplay • Help Menu')
-            .setTimestamp();
+    var helpmenu2 = new discord.MessageEmbed()    
+        .setTitle(`Spijkenisse Roleplay - Help Menu`)
+        .setThumbnail('https://media.discordapp.net/attachments/838112437239939133/905102457741393990/standard_9.gif')
+        .setDescription(`**Algemene Commands**\n\n``!server`` *Zie de Server Informatie.*\n``!user`` *Zie de informatie van een lid.*``!suggest`` *Maak een suggestie aan.*\n``spn/id`` *Maak een identiteitskaart aan.*\n``spn/ping`` *Zie de snelheid van de bot*\n\n``2️⃣ | Pagina 2 van de 6```)
+        .setFooter("Spijkenisse Roleplay • Help Menu • Algemeen Help Menu");
 
-    var algemenecommands = new discord.MessageEmbed()
-            .setTitle("📌 - Help Menu - Algemene Commands - 📌")
-            .setDiscription(`Zie hier alle Algemene Commands!\n\n**spn/avatar -** Zie iemand Profiel Foto/Gif\n**spn/id -** Maak een Identiteitskaart\n**spn/overval -** Start een Overval\n**!suggest -** Laat een Idee achter waarmee wij de Server kunnen verbeteren!\n**!rank -** Zie jou huidige Level!\n**spn/ping -** Zie de Ping van de BOT\n\n**Soon...** binnenkort word er meer toegevoegd laat vooral je ideeën achter doormiddel van !suggest (suggestie)`)
-            .setColor('GREEN')
-            .setFooter('Spijkenisse Roleplay • Help Menu')
-            .setTimestamp();
+    var helpmenu3 = new discord.MessageEmbed()    
+        .setTitle(`Spijkenisse Roleplay - Help Menu`);
 
-    var infocommands = new discord.MessageEmbed()
-            .setTitle("📚 - Help Menu - Informatieve Commands - 📚")
-            .setDiscription(`Zie hier alle Informatieve Commands!\n\n**spn/info -** *nog niet beschikbaar..*\n**spn/serverinfo -** Zie de Server Informatie\n**spn/overval -** Start een Overval\n\n**Soon...** binnenkort word er meer toegevoegd laat vooral je ideeën achter doormiddel van !suggest (suggestie)\n**spn/ping -** Zie de Status van de BOT!`)
-            .setColor('ORANGE')
-            .setFooter('Spijkenisse Roleplay • Help Menu')
-            .setTimestamp();
+    var helpmenu4 = new discord.MessageEmbed()    
+        .setTitle(`Spijkenisse Roleplay - Help Menu`);
 
+    var helpmenu5 = new discord.MessageEmbed()    
+        .setTitle(`Spijkenisse Roleplay - Help Menu`);
 
-    var pages = [
-        help1,
-        algemenecommands,
-        infocommands
-    ]
+    var helpmenu6 = new discord.MessageEmbed()    
+        .setTitle(`Spijkenisse Roleplay - Help Menu`);
 
-    var emoji = ["⏪", "⏩"]
-
-    var timeout = '100000'
-
-    pagination(message, pages, emoji, timeout)
+    var embedPages = [helpmenu1, helpmenu2, helpmenu3, helpmenu4, helpmenu5, helpmenu6]
+    ButtonPages.createPages(client, message, embedPages, 60 * 1000, "green", "👉", "👈", "❌");
 }
 
 module.exports.help = {
-    name: "help"
+    name: "help",
+    description: "Geeft al de verschillende commands",
 }
