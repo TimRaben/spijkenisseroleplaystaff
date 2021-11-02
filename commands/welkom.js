@@ -1,7 +1,8 @@
-const discord = require("discord.js");
 const { MessageButton } = require("discord-buttons");
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+
+async execute(client, message, args) {
 
     let button1 = new MessageButton()
         .setStyle('url')
@@ -23,6 +24,6 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(`Welkom ${member.id}!\n\nWelkom op onze Server! Lees de Regels goed door en hopelijk zien wij jou binnenkort bij onze Roleplays!`, button1, button2);
 
-
     }
+}
 }
