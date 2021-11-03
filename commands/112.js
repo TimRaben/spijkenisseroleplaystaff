@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
     var meldingBestaat = false;
 
-    message.guild.channels.cache.array.forEach(channel => {
+    message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
             meldingBestaat = true;
