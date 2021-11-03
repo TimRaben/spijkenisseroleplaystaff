@@ -71,7 +71,7 @@ module.exports.run = async (client, message, args) => {
                 
                         const filter = (m) => m.author.id === message.author.id;
                 
-                        const appStart = await message.channel.send(questions[collectCounter++]);
+                        const appStart = message.channel.send(questions[collectCounter++]);
                         const channel = appStart.channel;
                 
                         const collector = channel.createMessageCollector(filter);
