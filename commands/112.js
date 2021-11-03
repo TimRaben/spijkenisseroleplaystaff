@@ -60,71 +60,59 @@ module.exports.run = async (client, message, args) => {
 
                     message.channel.send(embedParent);
 
-                        const questions = [
-                            "**Wat is je naam?**",
-                            "**Wat is je Playstation Naam? (Locatie)**",
-                            "**Wat is er aan de hand? (reden)**",
-                        ];
-                
-                        let collectCounter = 0;
-                        let endCounter = 0;
-                
-                        const filter = (m) => m.author.id === message.author.id;
-                
-                        const appStart = message.channel.send(questions[collectCounter++]);
-                        const channel = appStart.channel;
-                
-                        const collector = channel.createMessageCollector(filter);
-                
-                        collector.on("collect", () => {
-                            if (collectCounter < questions.length) {
-                                channel.send(questions[collectCounter++]);
-                            } else {
-                                collector.stop("fulFilled");
-                            }
-                        });
-            
-                        collector.on("end", (collected, reason) => {
-                            if (reason === "fulFilled") {
-                                let index = 1;
-                                const mappedResponses = collected
-                                .map((msg) => {
-                                    return `${index++}. ${questions[endCounter++]}\n${msg.content}`;
+                    var staff = "866336898400911361";
+                    var person = message.author;
+
+                    var vraag1 = new discord.MessageEmbed()
+                        .setTitle("Meldkamer")
+                        .setColor("RED")
+                        .setDescription("Wat is je naam?")
+                    
+                    var vraag2 = new discord.MessageEmbed()
+                        .setTitle("Meldkamer")
+                        .setColor("RED")
+                        .setDescription("Wat is je Playstation Naam? (dit is belangrijk zo kunnen wij weten waar je bent)")
+                    
+                    var vraag3 = new discord.MessageEmbed()
+                        .setTitle("Meldkamer")
+                        .setColor("RED")
+                        .setDescription("Wat gebeurd er/waarvan wil je melding doen? (waarom heb je deze melding gemaakt)")
+
+                    settedParent.send(message.author.id);
+                    settedParent.send(embedParent);
+                    settedParent.send(vraag1);
+
+                    settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                        var antwoord1 = antwoord.first();;
+                        settedParent.send(vraag2);
+                    
+                        settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                            var antwoord2 = antwoord.first();;
+                            settedParent.send(vraag3);
+                        
+                        settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                                var antwoord3 = antwoord.first();;
+
+                                var melding = new discord.MessageEmbed()
+                                    .setTitle("112 Melding")
+                                    .setColor("RED")
+                                    .setThumbnail("https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg")
+                                    .setDescription(`Hieronder vind je alle informatie!\n\n**Naam Melder:**\n${antwoord1}\n**Locatie (PSN):**\n${antwoord2}\n**Melding:**\n${antwoord3}\n\nDe hulpdiensten zijn z.s.m. onderweg!`)
+
+                                settedParent.bulkDelete(6).then(
+                                    settedParent.send("<@$866336898400911361>")
+                                )
                                 })
-                                .join("\n\n");
-                
-                                message.channel.send(
-                                    new discord.MessageEmbed()
-                                        .setAuthor(
-                                            message.author.tag, 
-                                            message.author.displayAvatarURL({ dynamic: true})
-                                        )
-                                        .setTitle('Spijkenisse Roleplay - 112 Melding')
-                                        .setThumbnail(`https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg`)
-                                        .setDescription(mappedResponses)
-                                        .setColor('#ff6047')
-                                        .setTimestamp()
-                                        .setFooter('Spijkenisse Roleplay • Meldkamer • Alle Rechten Voorbehoud')
-                                );
-                            }
-                        });
-
-                }
-
-
-            )
-
-
-        }
-
-
-    )
-
+                            })
+                        })
+                    })
+                })
 }
 
-module.exports.help = {
-    name: "112melding",
-    aliases: "status",
-    description: "Geeft al de verschillende commands",
-    category: "Informatie",
-}
+
+    module.exports.help = {
+        name: "meldkamer",
+        aliases: "status",
+        description: "Geeft al de verschillende commands",
+        category: "Informatie",
+    }
