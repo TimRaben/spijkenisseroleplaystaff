@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(meldinggemaaktembed)
 
-    message.guild.channel.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
+    message.guild.channels.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
