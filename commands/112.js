@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     const categoryID = "905439432168058920";
 
     var userName = message.author.username;
-    var userDiscriminator = message.auhtor.dicriminator;
+    var userDiscriminator = message.author.discriminator;
 
     var meldingBestaat = false;
 
