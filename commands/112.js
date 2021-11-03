@@ -46,6 +46,7 @@ module.exports.run = async (client, message, args) => {
                     settedParent.updateOverwrite(message.author.id, {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
+                        VIEW_CHANNEL: true,
                         SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         CONNECT: true,
@@ -57,8 +58,6 @@ module.exports.run = async (client, message, args) => {
                         .setDescription(`Hallo ${message.author.username}, je spreekt met de meldkamer beantwoord de vragen hieronder, zodra je dit hebt gedaan zullen er z.s.m. hulpdiensten naar jou locatie komen!`)
                         .setAuthor("Meldkamer")
                         .setFooter('Spijkenisse Roleplay - Meldkamer')
-
-                    message.channel.send(embedParent);
 
                     var staff = "866336898400911361";
                     var person = message.author;
