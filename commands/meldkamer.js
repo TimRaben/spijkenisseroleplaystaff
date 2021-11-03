@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
     var meldkamericon = `https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg`
 
     var meldkamerEmbed = new discord.MessageEmbed()
-            .setTitle(`${meldkamericon} Justitie - Meldkamer`)
-            .setAuthor(meldkamericon `Justitie - Meldkamer`)
-            .setDescription(`**112 Melding**\n\nEr is een melding binnengekomen bij de meldkamer! Bekijk hier onder de nodige Informatie! De Hulpdiensten zijn z.s.m. onderweg! Heb nog even geduld!\n\n__Informatie:__\n**Locatie (PSN):** ${args[0]}\n**Discord Naam:** ${message.author}\n**Playstation naam:** ${args.slice(1).join(" ")}\n**Hulpdiensten:** Politie\n\nEen melding kan gemaakt worden met *spn/112 (playstation naam) (melding)*`)
+            .setTitle(`Meldkamer Melding`)
+            .setAuthor(`Justitie - Meldkamer`)
+            .setDescription(`**112 Melding**\n\nEr is een melding binnengekomen bij de meldkamer! Bekijk hier onder de nodige Informatie! De Hulpdiensten zijn z.s.m. onderweg! Heb nog even geduld!\n\n__Informatie:__\n**Locatie (PSN):** ${args[0]}\n**Discord Naam:** ${message.author}\n**Reden/Melding:** ${args.slice(1).join(" ")}\n**Hulpdiensten:** Politie\n\nEen melding kan gemaakt worden met *spn/112 (playstation naam) (melding)*`)
             .setThumbnail("https://pbs.twimg.com/profile_images/746720808454717440/Mt-tSDgi_400x400.jpg")
             .setTimestamp()
             .setFooter("Spijkenisse Roleplay • Meldkamer • Alle Rechten Voorbehoud")
