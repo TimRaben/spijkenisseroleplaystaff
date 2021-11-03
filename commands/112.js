@@ -100,14 +100,14 @@ module.exports.run = async (client, message, args) => {
                                     .setDescription(`Hieronder vind je alle informatie!\n\n**Naam Melder:**\n${antwoord1}\n**Locatie (PSN):**\n${antwoord2}\n**Melding:**\n${antwoord3}\n\nDe hulpdiensten zijn z.s.m. onderweg!`)
 
                                 settedParent.bulkDelete(6).then(
-                                    settedParent.send("<@$866336898400911361>")
+                                    settedParent.send("<@&866336898400911361>", melding)
                                 )
                                 })
                             })
                         })
                     })
 
-                    settedParent.send(`${message.member.author}, <@&866336898400911361>`).then(msg => msg.delete({ timeout: 1000}));
+                    settedParent.send(`Gelukt!`).then(msg => msg.delete({ timeout: 1000}));
 
                 })
 }
