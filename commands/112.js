@@ -82,15 +82,15 @@ module.exports.run = async (client, message, args) => {
                     settedParent.send(embedParent);
                     settedParent.send(vraag1);
 
-                    settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                    settedParent.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
                         var antwoord1 = antwoord.first();;
                         settedParent.send(vraag2);
                     
-                        settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                        settedParent.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
                             var antwoord2 = antwoord.first();;
                             settedParent.send(vraag3);
                         
-                        settedParent.awaitMessages(s => s.author.id == message.author.id ).then(antwoord => {
+                        settedParent.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
                                 var antwoord3 = antwoord.first();;
 
                                 var melding = new discord.MessageEmbed()
@@ -106,6 +106,9 @@ module.exports.run = async (client, message, args) => {
                             })
                         })
                     })
+
+                    settedParent.send(`${message.member.author}, <@&866336898400911361>`).then(msg => msg.delete({ timeout: 1000}));
+
                 })
 }
 
