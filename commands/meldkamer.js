@@ -79,6 +79,7 @@ module.exports.run = async (client, message, args) => {
                         .setDescription("Wat gebeurd er/waarvan wil je melding doen? (waarom heb je deze melding gemaakt)")
 
                     settedParent.send(message.author);
+                    settedParent.send("<@&866336898400911361>");
                     settedParent.send(embedParent);
                     settedParent.send(vraag1);
 
