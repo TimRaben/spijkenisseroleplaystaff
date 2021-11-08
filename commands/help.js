@@ -5,7 +5,8 @@ const { MessageMenuOption, MessageMenu } = require("discord-buttons");
 module.exports.run = async (client, message, args) => {
 
         const embed = new discord.MessageEmbed()
-            setDescription("Startpagina Helpmenu");
+            .setDescription("Startpagina Helpmenu")
+            .setColor("BLUE");
 
         const embed2 = new discord.MessageEmbed()
             .setDescription("Startpagina Helpmenu 2")
@@ -68,7 +69,7 @@ module.exports.run = async (client, message, args) => {
             SendMenu.edit("Dit Help Menu is niet meer in gebruik typ opnieuw *spn/help*")
         })
     }
-    
+
 module.exports.help = {
     name: "help",
     description: "Geeft al de verschillende commands",
