@@ -10,7 +10,7 @@ const client = new discord.Client();
 
 const PORT = process.env.PORT || 8000;
 
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/TimRaben', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
