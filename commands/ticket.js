@@ -5,20 +5,21 @@ module.exports.run = async (client, message, args) => {
     let channel = message.mentions.channels.first();
     if(!channel) return message.reply(":x: **|** Verkeerd Commando! Gebruik: `spn/ticket-setup #channel`");
 
-    let sent = channel.send(new discord.MessageEmbed()
+    var embed = new discord.MessageEmbed()
         .setAuthor("Spijkenisse Roleplay")
         .setTitle("Spijkenisse Roleplay - Ticket Systeem")
         .setDescription("\nKlik op een Emoji onder dit bericht om een ticket aan te maken, dit gaat per categorie dus kijk goed waarvoor je ticket bedoeld is, Bekijk hieronder wat welke Emoji inhoud!\n\n💬 **| Algemeen** *vragen, algemene dingen*\n📚 **| Overig** *overige zaken*\n📌 **| Staff Klachten**\n🔒 **| Lead Ticket** *staff sollicitaties en zaken voor echt alleen lead*\n\n*let op! zodra je Lead Tickets aanmaakt voor algemene dingen kan dit bestraft worden.")
         .setFooter("Spijkenisse Roleplay - Ticket Systeem")
         .setColor("00ff00")
-    );
 
-    sent.react('💬');
-    sent.react('📚');
-    sent.react('📌');
-    sent.react('🔒');
-    settings.set(`${message.guild.id}-algemeen`, sent.id);
-    message.delete();
+            channel.send(embed)
+    
+        channel.send(embed).then(async (msg) => {
+            await msg.react('✅');
+            await msg.react('❌');
+            message.delete();
+            
+        })
 
 ('messageReactionAdd', async (reaction, user) => {
     if(user.partial) await user.fetch();
