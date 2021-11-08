@@ -64,37 +64,11 @@ module.exports.run = async (client, message, args) => {
 
     const SendMenu = await message.channel.send(embed, select);
 
-    const filter = ( button ) => button.clicker.user.id === message.author.id;
-    let collector = SendMenu.createMenuCollector(filter, { time : 60000 });
-
-    collector.on("collect" , (b) => {
-        if(b.values[0] == "option1")
-            SendMenu.edit(embed, select)
-        })
-
-        if(b.values[0] == "option2") {
-            SendMenu.edit(embed2, select)
-        }
-
-        if(b.values[0] == "option3") {
-            SendMenu.edit(embed3, select)
-        }
-
-        if(b.values[0] == "option4") {
-            SendMenu.edit(embed4, select)
-        }
-
-        if(b.values[0] == "option5") {
-            SendMenu.edit(embed5, select)
-        }
-
-        b.reply.defer();
-    }
-
         collector.on("end", (b) => {
             SendMenu.edit("Dit Help Menu is niet meer in gebruik typ opnieuw *spn/help*")
         })
-
+    }
+    
 module.exports.help = {
     name: "help",
     description: "Geeft al de verschillende commands",
