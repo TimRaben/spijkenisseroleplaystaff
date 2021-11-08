@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    let channel = message.mentions.channels.first();
+    var channel = message.mentions.channels.first();
     if(!channel) return message.reply(":x: **|** Verkeerd Commando! Gebruik: `spn/ticket-setup #channel`");
 
     var embed = new discord.MessageEmbed()
@@ -15,10 +15,12 @@ module.exports.run = async (client, message, args) => {
             channel.send(embed)
     
         channel.send(embed).then(async (msg) => {
-            await msg.react('✅');
-            await msg.react('❌');
+            await msg.react('💬');
+            await msg.react('📚');
+            await msg.react('📌');
+            await msg.react('🔒');
             message.delete();
-            
+
         })
 
 ('messageReactionAdd', async (reaction, user) => {
