@@ -1,23 +1,11 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
-const mongoose = require("mongoose");
 
 //  Command handler
 const fs = require("fs");
 const { isFunction } = require("util");
 
 const client = new discord.Client();
-
-const PORT = process.env.PORT || 8000;
-
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/TimRaben', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-  console.log("Geconnecteerd met de MongoDB Database!");
-}).catch((err) => {
-  console.log(err);
-});
 
 //  Command handler
 client.commands = new discord.Collection();
@@ -65,8 +53,6 @@ client.on("ready", async () => {
     }, 4500) // Second You Want to Change Status, This Cahnges Every 2 Seconds
 
 });
-
-console.log(process.env.MONGODB_URL);
 
 client.on("message", async message => {
 
