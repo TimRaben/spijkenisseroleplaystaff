@@ -64,11 +64,8 @@ module.exports.run = async (client, message, args) => {
         .addOptions(option1, option2, option3, option4, option5)
 
     const SendMenu = await message.channel.send(embed, select);
-
-        collector.on("end", (b) => {
-            SendMenu.edit("Dit Help Menu is niet meer in gebruik typ opnieuw *spn/help*")
-        })
-    }
+      
+}
 
 module.exports.help = {
     name: "help",
