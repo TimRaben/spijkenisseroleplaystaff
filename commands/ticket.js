@@ -11,8 +11,6 @@ module.exports.run = async (client, message, args) => {
         .setDescription("\nKlik op een Emoji onder dit bericht om een ticket aan te maken, dit gaat per categorie dus kijk goed waarvoor je ticket bedoeld is, Bekijk hieronder wat welke Emoji inhoud!\n\n💬 **| Algemeen** *vragen, algemene dingen*\n📚 **| Overig** *overige zaken*\n📌 **| Staff Klachten**\n🔒 **| Lead Ticket** *staff sollicitaties en zaken voor echt alleen lead*\n\n*let op! zodra je Lead Tickets aanmaakt voor algemene dingen kan dit bestraft worden.")
         .setFooter("Spijkenisse Roleplay - Ticket Systeem")
         .setColor("00ff00")
-
-            channel.send(embed)
     
         channel.send(embed).then(async (msg) => {
             await msg.react('💬');
