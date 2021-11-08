@@ -10,10 +10,14 @@ const client = new discord.Client();
 
 const PORT = process.env.PORT || 8000;
 
-mongoose.connect(process.env.MONGODB_URL) || 'mongodb://localhost/TimRaben', {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}
+}).then(() => {
+  console.log("Geconnecteerd met de MongoDB Database!");
+}).catch((err) => {
+  console.log(err);
+});
 
 //  Command handler
 client.commands = new discord.Collection();
