@@ -7,10 +7,15 @@ const { isFunction } = require("util");
 
 const client = new discord.Client();
 
+const PORT = process.env.PORT || 8000;
+
+mongoose.connect(process.env.MONGODB_URL) || 'mongodb://localhost/TimRaben', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}
 
 //  Command handler
 client.commands = new discord.Collection();
-
 
 client.login(process.env.token);
 
