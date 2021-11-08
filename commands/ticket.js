@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     let channel = message.mentions.channels.first();
-    if(!channel) return message.reply(":x: **|** Verkeerd Commando! Gebruik: `!sollicitatie-setup #channel`");
+    if(!channel) return message.reply(":x: **|** Verkeerd Commando! Gebruik: `spn/ticket-setup #channel`");
 
     let sent = channel.send(new discord.MessageEmbed()
         .setAuthor("Spijkenisse Roleplay")
@@ -19,7 +19,6 @@ module.exports.run = async (client, message, args) => {
     sent.react('🔒');
     settings.set(`${message.guild.id}-algemeen`, sent.id);
     message.delete();
-}
 
 ('messageReactionAdd', async (reaction, user) => {
     if(user.partial) await user.fetch();
@@ -57,8 +56,6 @@ module.exports.run = async (client, message, args) => {
             .setDescription(`Hallo! Bedankt voor het aanmaken van een Ticket, een van onze Staffleden zal u z.s.m. helpen!\n\nStel alvast uw vraag of zeg alvast wat de reden is waarom je deze ticket aanmaakt.`)
             .setColor("BLUE"))
             .setTimestamp()
-        })
-    }
     
     if(reaction.message.id == ticketid && reaction.emoji.name == '📌') {
         reaction.users.remove(user);
@@ -84,8 +81,6 @@ module.exports.run = async (client, message, args) => {
             .setTitle(`Welkom ${user.tag}`)
             .setDescription(`Hallo! Bedankt voor het aanmaken van een Ticket, in deze ticket kan jij jou Klacht doen over een Stafflid, Let op! Voor klachten tegen Spelers kunt u een Algemene Ticket aanmaken en dan helpt een van onze Staffleden u daar verder.\n\nBeantwoord de volgende vragen alvast:\n**Tegen wie doe jij jou klacht?** *(naam persoon)*\n**Wat is de reden van deze klacht?** *(reden)*\n**Bewijs:** *(bewijs)*\n\nU word z.s.m. geholpen.`)
             .setColor("RED"))
-        })
-    }
     
     if(reaction.message.id == ticketid && reaction.emoji.name == '🔒') {
         reaction.users.remove(user);
@@ -111,8 +106,6 @@ module.exports.run = async (client, message, args) => {
             .setTitle(`Welkom ${user.tag}`)
             .setDescription(`Hallo! Bedankt voor het aanmaken van een Lead ticket!\n\nWaarmee kunnen we u precies helpen?\n\nU word z.s.m. geholpen.`)
             .setColor("YELLOW"))
-        })
-    }
     
     if(reaction.message.id == ticketid && reaction.emoji.name == '📚') {
         reaction.users.remove(user);
@@ -141,6 +134,15 @@ module.exports.run = async (client, message, args) => {
         })
     }
 })
+
+}
+
+})
+}
+})
+}
+})
+}
 
 module.exports.help = {
     name: "ticket-setup"
