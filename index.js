@@ -36,7 +36,7 @@ fs.readdir("./commands/", (err, files) => {
     jsFiles.forEach((f, i) => {
 
         var fileGet = require(`./commands/${f}`);
-        console.log(`De file ${f} is geladen`);
+        console.log(`✅ De file ${f} is geladen!`);
 
         client.commands.set(fileGet.help.name, fileGet);
     });
@@ -45,7 +45,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
-    console.log(`${client.user.username} is online.`);
+    console.log(`${client.user.username} is herstart.`);
 
     setInterval(() => {
         const statuses = [
@@ -61,6 +61,8 @@ client.on("ready", async () => {
     }, 4500) // Second You Want to Change Status, This Cahnges Every 2 Seconds
 
 });
+
+console.log(process.env.MONGODB_URL);
 
 client.on("message", async message => {
 
