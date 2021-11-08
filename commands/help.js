@@ -66,7 +66,7 @@ module.exports.run = async (client, message, args) => {
     const SendMenu = await message.channel.send(embed, select);
       
     const filter = ( button ) => button.clicker.user.id === message.author.id;
-    let collector = SendMenu.createMenuCollector(filter , { time : 60000 });
+    let collector = SendMenu.createMenuCollector(filter , { time : 10000 });
 
     collector.on("collect" , (b) => {
 
