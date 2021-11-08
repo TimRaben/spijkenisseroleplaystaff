@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
+const mongoose = require("mongoose");
 
 //  Command handler
 const fs = require("fs");
