@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
             .setTitle("Spijkenisse Roleplay")
             .setDescription(`${args.slice(0).join(" ")}`)
             .setColor("BLUE")
-            .setFooter(`${message.member.displayName} • Spijkenisse Roleplay`)
+            .setFooter(`${message.member.displayName} • Spijkenisse Roleplay • Alle Rechten Voorbehoud`)
             .setTimestamp()
 
             return message.channel.send(embed);       
