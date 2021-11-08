@@ -1,35 +1,99 @@
-const ButtonPages = require('discord-button-pages');
 const discord = require('discord.js');
+const disbut = require("discord-buttons");
+const { MessageMenuOption, MessageMenu } = require("discord-buttons");
 
 module.exports.run = async (client, message, args) => {
 
-    const helpmenu1 = new discord.MessageEmbed()
-        .setTitle(`Spijkenisse Roleplay - Help Menu`)
-        .setThumbnail('https://media.discordapp.net/attachments/866336989891264532/905036514910695454/static_15.png')
-        .setDescription('Hallo! Dit is onze Help Pagina.\n\nHieronder kan je klikken op de buttons elke keer dat je op een button klikt ga je naar een andere pagina, klik op de buttons om het goede help menu te vinden die jij nodig hebt!\n\n🧱  **Pagina 1 |** *standaard menu (dit menu)*\n📌  **Pagina 2 |** *algemene commands*\n💰  **Pagina 3 |** *economie commands*\n🔊  **Pagina 4 |** *muziek commands*\n🔰  **Pagina 5 |** *staff commands*\n⚡  **Pagina 6 |** *management commands*\n\n``1️⃣ | Pagina 1 van de 6``')
-        .setFooter("Spijkenisse Roleplay • Help Menu • Start Menu");
+        const embed = new discord.MessageEmbed()
+            setDescription("Startpagina Helpmenu");
 
-    const helpmenu2 = new discord.MessageEmbed()    
-        .setTitle(`Spijkenisse Roleplay - Help Menu`)
-        .setThumbnail('https://media.discordapp.net/attachments/866336989891264532/905036514910695454/static_15.png')
-        .setDescription('**Algemene Commands**\n\n``!server`` *Zie de Server Informatie.*\n``!user`` *Zie de informatie van een lid.*``!suggest`` *Maak een suggestie aan.*\n``spn/id`` *Maak een identiteitskaart aan.*\n``spn/ping`` *Zie de snelheid van de bot*\n\n``2️⃣ | Pagina 2 van de 6``')
-        .setFooter("Spijkenisse Roleplay • Help Menu • Algemeen Help Menu");
+        const embed2 = new discord.MessageEmbed()
+            .setDescription("Startpagina Helpmenu 2")
+            .setColor("BLUE");
 
-    const helpmenu3 = new discord.MessageEmbed()    
-        .setTitle(`Spijkenisse Roleplay - Help Menu`);
+        const embed3 = new discord.MessageEmbed()
+            .setDescription("Startpagina Helpmenu 3")
+            .setColor("BLUE");
 
-    const helpmenu4 = new discord.MessageEmbed()    
-        .setTitle(`Spijkenisse Roleplay - Help Menu`);
+        const embed4 = new discord.MessageEmbed()
+            .setDescription("Startpagina Helpmenu")
+            .setColor("BLUE");
+        
+        const embed5 = new discord.MessageEmbed()
+            .setDescription("Startpagina Helpmenu")
+            .setColor("BLUE");
 
-    const helpmenu5 = new discord.MessageEmbed()    
-        .setTitle(`Spijkenisse Roleplay - Help Menu`);
+    //----------------------- Opties ---------------------------
 
-    const helpmenu6 = new discord.MessageEmbed()    
-        .setTitle(`Spijkenisse Roleplay - Help Menu`);
+        let option1 = new MessageMenuOption()
+            .setLabel('Startpagina')
+            .setEmoji('🧱')
+            .setValue('option1')
+            .setDescription('Startpagina')
 
-    const embedPages = [helpmenu1, helpmenu2, helpmenu3, helpmenu4, helpmenu5, helpmenu6]
-    ButtonPages.createPages(client, message, embedPages, 60 * 1000, "green", "👉", "👈", "❌");
-};
+        let option2 = new MessageMenuOption()
+            .setLabel('Informatieve Commands')
+            .setEmoji('📚')
+            .setValue('option2')
+            .setDescription('Informatie Commands')
+
+        let option3 = new MessageMenuOption()
+            .setLabel('Algemene Commands')
+            .setEmoji('📋')
+            .setValue('option3')
+            .setDescription('Algemene Commands')
+
+        let option4 = new MessageMenuOption()
+            .setLabel('Economoie Commands')
+            .setEmoji('💰')
+            .setValue('option4')
+            .setDescription('Economoie Commands')
+
+        let option5 = new MessageMenuOption()
+            .setLabel('Staff Commands')
+            .setEmoji('🔨')
+            .setValue('option5')
+            .setDescription('Staff Commands')
+    
+    let select = new MessageMenu()
+        .setID('selector')
+        .setPlaceholder('Klik op het Help Menu wat jij wilt.')
+        .setMaxValues(1)
+        .setMinValues(1)
+        .addOptions(option1, option2, option3, option4, option5)
+
+    const SendMenu = await message.channel.send(embed, select);
+
+    const filter = ( button ) => button.clicker.user.id === message.author.id;
+    let collector = SendMenu.createMenuCollector(filter, { time : 60000 });
+
+    collector.on("collect" , (b) => {
+        if(b.values[0] == "option1")
+            SendMenu.edit(embed, select)
+        })
+
+        if(b.values[0] == "option2") {
+            SendMenu.edit(embed2, select)
+        }
+
+        if(b.values[0] == "option3") {
+            SendMenu.edit(embed3, select)
+        }
+
+        if(b.values[0] == "option4") {
+            SendMenu.edit(embed4, select)
+        }
+
+        if(b.values[0] == "option5") {
+            SendMenu.edit(embed5, select)
+        }
+
+        b.reply.defer();
+    }
+
+        collector.on("end", (b) => {
+            SendMenu.edit("Dit Help Menu is niet meer in gebruik typ opnieuw *spn/help*")
+        })
 
 module.exports.help = {
     name: "help",
