@@ -1,6 +1,8 @@
 const discord = require("discord.js");
 const { MessageButton } = require("discord-buttons");
 
+module.exports.run = async (client, message, args) => {
+
 client.on('guildMemberAdd', guildMember => {
 
     let button = new MessageButton()
@@ -22,3 +24,4 @@ client.on('guildMemberAdd', guildMember => {
     channel.send(embed, button);
 
 }) 
+}
