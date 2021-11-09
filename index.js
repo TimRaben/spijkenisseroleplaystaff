@@ -55,7 +55,7 @@ client.on("ready", async () => {
 
 });
 
-client.on('guildMemberAdd', guildMember => {
+client.on('guildMemberAdd', member => {
 
     let button = new MessageButton()
             .setStyle('url')
@@ -70,6 +70,7 @@ client.on('guildMemberAdd', guildMember => {
             .setID('click_to_function');
 
 
+    if(!channel) return;
 
     var embed = new discord.MessageEmbed()
         .setTitle(`Welkom <@${guildMember.user.id}>`)
