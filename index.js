@@ -96,7 +96,7 @@ client.on("message", async message => {
 
 });
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', guildMember => {
 
     let button = new MessageButton()
             .setStyle('url')
