@@ -69,9 +69,6 @@ client.on('guildMemberAdd', member => {
             .setLabel('🛒 Store')
             .setID('click_to_function');
 
-
-    if(!channel) return;
-
     var embed = new discord.MessageEmbed()
         .setTitle(`Welkom <@${guildMember.user.id}>`)
         .setAuthor("Spijkenisse Roleplay")
@@ -82,7 +79,7 @@ client.on('guildMemberAdd', member => {
 
         var channel = message.guild.channels.cache.get("902193674576863292");
 
-    channel.send(embed, button, button1)
+    channel.send(embed, button, button1);
 
 })
 
