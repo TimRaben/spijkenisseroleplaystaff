@@ -59,13 +59,13 @@ client.on('guildMemberAdd', guildMember => {
     
     var channel = message.guild.channels.cache.get("902193674576863292");
 
-        var button = new MessageButton()
+    let button = new MessageButton()
             .setStyle('url')
             .setURL('https://sway.office.com/QJVFr8icY5GWzJgd?ref=Link2')
             .setLabel('📚 Regels')
             .setID('click_to_function')
 
-        var button1 = new MessageButton()
+    let button1 = new MessageButton()
             .setStyle('url')
             .setURL('https://spijkenisseroleplay.craftingstore.net/')
             .setLabel('🛒 Store')
