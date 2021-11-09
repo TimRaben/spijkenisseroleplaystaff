@@ -56,20 +56,18 @@ client.on("ready", async () => {
 });
 
 client.on('guildMemberAdd', guildMember => {
-    
-    var channel = message.guild.channels.cache.get("902193674576863292");
 
     let button = new MessageButton()
             .setStyle('url')
             .setURL('https://sway.office.com/QJVFr8icY5GWzJgd?ref=Link2')
             .setLabel('📚 Regels')
-            .setID('click_to_function')
+            .setID('click_to_function');
 
     let button1 = new MessageButton()
             .setStyle('url')
             .setURL('https://spijkenisseroleplay.craftingstore.net/')
             .setLabel('🛒 Store')
-            .setID('click_to_function')
+            .setID('click_to_function');
 
 
 
@@ -79,9 +77,11 @@ client.on('guildMemberAdd', guildMember => {
         .setDescription(`Hey <@${guildMember.user.id}>, leuk dat je onze Server bent gejoined! Hopelijk heb je een fijne en leuke tijd op onze Server!\n\nLees wel even snel de regels door :wink:\n\n**Totale Members:** ${message.guild.memberCount}`)
         .setThumbnail("https://media.discordapp.net/attachments/866336989891264532/905036514910695454/static_15.png?width=205&height=205")
         .setFooter("Spijkenisse Roleplay • Welkom • Alle Rechten Voorbehoud")
-        .setTimestamp()
+        .setTimestamp();
 
-        channel.send(embed, button, button1)
+        var channel = message.guild.channels.cache.get("902193674576863292");
+
+    channel.send(embed, button, button1)
 
 })
 
