@@ -11,8 +11,6 @@ const client = new discord.Client();
 //  Command handler
 client.commands = new discord.Collection();
 
-client.login(process.env.token);
-
 
 //  Command handler
 fs.readdir("./commands/", (err, files) => {
@@ -96,3 +94,4 @@ client.on("message", async message => {
 
 });
 
+client.login(process.env.token);
